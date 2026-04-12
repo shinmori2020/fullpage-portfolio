@@ -3135,3 +3135,297 @@
     font-size: 32px;
   }
 }
+
+/* ----------------------------------------
+   スライド23: Analysis Slide / 棒グラフ
+   ---------------------------------------- */
+.slide-23 {
+  background: var(--bg-white);
+}
+
+.slide-23__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- 左: ステップ/プロセス ---- */
+.slide-23__left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px 60px 80px;
+}
+
+.slide-23__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 420px;
+}
+
+.slide-23__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.slide-23__step:last-child {
+  border-bottom: none;
+}
+
+.slide-23__step-num {
+  font-family: var(--font-en);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.slide-23__step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slide-23__step-title {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.slide-23__step-desc {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---- ブルー円（セクション直下に配置） ---- */
+.slide-23__circle {
+  width: 120vh;
+  height: 120vh;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  right: -30vh;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.slide-23__circle-text {
+  max-width: 320px;
+  margin-right: 20%;
+}
+
+.slide-23__title {
+  font-family: var(--font-en);
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.slide-23__desc {
+  font-family: var(--font-en);
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+
+/* ---- スライド23 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-23__layout {
+    flex-direction: column;
+  }
+
+  .slide-23__left {
+    width: 100%;
+    height: 50%;
+    padding: 32px 24px;
+  }
+
+  .slide-23__right {
+    width: 100%;
+    height: 50%;
+  }
+
+  .slide-23__circle {
+    width: 80vh;
+    height: 80vh;
+    right: -30vh;
+  }
+
+  .slide-23__circle-text {
+    margin-right: 40%;
+  }
+
+  .slide-23__title {
+    font-size: 28px;
+  }
+}
+
+/* ----------------------------------------
+   スライド24: ステップ / 番号付きリスト
+   ---------------------------------------- */
+.slide-24 {
+  background: var(--bg-white);
+}
+
+.slide-24__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: 写真（余白付き） ---- */
+.slide-24__left {
+  width: 45%;
+  margin: 80px 0 80px 48px;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-24__left .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-24__left .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-24__left .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* 白い縦線で3分割 */
+.slide-24__dividers {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slide-24__dividers::before,
+.slide-24__dividers::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: var(--bg-white);
+}
+
+.slide-24__dividers::before {
+  top: 33.33%;
+}
+
+.slide-24__dividers::after {
+  top: 66.66%;
+}
+
+/* ---- 右: 番号付きステップ ---- */
+.slide-24__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-24__right-inner {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.slide-24__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.slide-24__step-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-en);
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide-24__step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.slide-24__step-title {
+  font-family: var(--font-en);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.04em;
+}
+
+.slide-24__step-desc {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---- スライド24 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-24__layout {
+    flex-direction: column;
+  }
+
+  .slide-24__left {
+    width: auto;
+    height: 35%;
+    margin: 24px 24px 0;
+  }
+
+  .slide-24__right {
+    padding: 32px 24px;
+  }
+
+  .slide-24__step-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .slide-24__step-title {
+    font-size: 17px;
+  }
+}

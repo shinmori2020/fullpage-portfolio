@@ -50,6 +50,8 @@
       case 18: slide19Anim(p); break;
       case 19: slide20Anim(p); break;
       case 20: slide22Anim(p); break;
+      case 21: slide23Anim(p); break;
+      case 22: slide24Anim(p); break;
       // 新しいスライドはここに追加
     }
   }
@@ -142,6 +144,38 @@
     if (photo) {
       gsap.set(photo, { x: 60 });
       tl.to(photo, { opacity: 1, x: 0, duration: 0.85, ease: "power3.out" }, "-=0.6");
+    }
+  }
+
+  /* ---------- スライド24: ステップ / 番号付きリスト ---------- */
+  function slide24Anim(p) {
+    var tl = gsap.timeline();
+    var photo = p.querySelector(".slide-24__left");
+    var steps = p.querySelectorAll(".slide-24__step");
+
+    if (photo) {
+      gsap.set(photo, { x: -60 });
+      tl.to(photo, { opacity: 1, x: 0, duration: 0.85, ease: "power3.out" });
+    }
+    steps.forEach(function (step) {
+      gsap.set(step, { x: 30 });
+      tl.to(step, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, "-=0.35");
+    });
+  }
+
+  /* ---------- スライド23: Analysis Slide ---------- */
+  function slide23Anim(p) {
+    var tl = gsap.timeline();
+    var steps  = p.querySelectorAll(".slide-23__step");
+    var circle = p.querySelector(".slide-23__circle");
+
+    steps.forEach(function (step) {
+      gsap.set(step, { x: -30 });
+      tl.to(step, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, "-=0.3");
+    });
+    if (circle) {
+      gsap.set(circle, { scale: 0.85 });
+      tl.to(circle, { opacity: 1, scale: 1, duration: 0.85, ease: "power3.out" }, "-=0.5");
     }
   }
 
