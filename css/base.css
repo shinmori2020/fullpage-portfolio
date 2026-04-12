@@ -1,0 +1,71 @@
+/* ========================================
+   base.css — リセット・CSS変数・共通スタイル
+   ======================================== */
+
+/* ---------- リセット ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- CSS変数 ---------- */
+:root {
+  --bg-white: #ffffff;
+  --bg-light: #f6f7f9;
+  --bg-card: #ffffff;
+  --text-dark: #1a1e2c;
+  --text-body: #4a4f63;
+  --text-muted: #8b90a0;
+  --border: #e2e4ea;
+  --accent: #2c5fcc;
+  --accent-light: #e8eefb;
+  --accent-hover: #1e4baa;
+  --font-en: 'Outfit', sans-serif;
+  --font-jp: 'Noto Sans JP', sans-serif;
+}
+
+/* ---------- 基本設定 ---------- */
+html, body {
+  overflow: hidden;
+  height: 100vh;
+  overscroll-behavior: none;
+  font-family: var(--font-jp);
+  color: var(--text-body);
+  background: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- パネル共通 ---------- */
+.panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.panel:not(.is-active) {
+  content-visibility: hidden;
+}
+
+.panel.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+/* ---------- ヘルパー ---------- */
+.anim-hidden {
+  opacity: 0;
+}

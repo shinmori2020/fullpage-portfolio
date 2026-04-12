@@ -1,0 +1,3137 @@
+/* ========================================
+   sections.css — セクション固有スタイル
+   ======================================== */
+
+/* ----------------------------------------
+   スライド1: カバー / Hero
+   ---------------------------------------- */
+.slide-1 {
+  background: var(--accent);
+  align-items: center;
+  justify-content: center;
+}
+
+/* 背景: 画像プレースホルダー（左右分割 + 暗めオーバーレイ） */
+.slide-1__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+}
+
+.slide-1__bg::before,
+.slide-1__bg::after {
+  content: "";
+  display: block;
+  height: 100%;
+}
+
+/* 左側: 濃いブルー（ビル写真の代替） */
+.slide-1__bg::before {
+  width: 50%;
+  background:
+    linear-gradient(160deg, rgba(30, 58, 110, 0.85), rgba(36, 80, 168, 0.7)),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.03) 40px,
+      rgba(255, 255, 255, 0.03) 41px
+    );
+}
+
+/* 右側: 明るいブルー（ビル写真の代替） */
+.slide-1__bg::after {
+  width: 50%;
+  background:
+    linear-gradient(200deg, rgba(74, 128, 224, 0.6), rgba(44, 95, 204, 0.5)),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.03) 40px,
+      rgba(255, 255, 255, 0.03) 41px
+    );
+}
+
+/* プレースホルダー（共通） */
+.placeholder-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 48px;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
+.placeholder-image__icon {
+  width: 80px;
+  height: 54px;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.placeholder-image__label {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.15em;
+}
+
+/* 右上の幾何学的な斜線装飾 */
+.slide-1__lines {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 70%;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.slide-1__lines span {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 0.12);
+  transform-origin: top right;
+}
+
+.slide-1__lines span:nth-child(1) {
+  width: 200%;
+  height: 2px;
+  top: 15%;
+  right: -20%;
+  transform: rotate(-35deg);
+}
+
+.slide-1__lines span:nth-child(2) {
+  width: 200%;
+  height: 2px;
+  top: 28%;
+  right: -10%;
+  transform: rotate(-35deg);
+}
+
+.slide-1__lines span:nth-child(3) {
+  width: 200%;
+  height: 1px;
+  top: 40%;
+  right: -5%;
+  transform: rotate(-35deg);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* コンテンツ（中央揃え） */
+.slide-1__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.slide-1__title {
+  font-family: var(--font-en);
+  font-size: clamp(72px, 10vw, 140px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.slide-1__subtitle {
+  font-family: var(--font-en);
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.25em;
+  margin-top: 16px;
+}
+
+/* ---------- スライド1 レスポンシブ ---------- */
+@media (max-width: 768px) {
+  .slide-1__subtitle {
+    letter-spacing: 0.15em;
+  }
+}
+
+/* ----------------------------------------
+   スライド2: 目次 / Contents
+   ---------------------------------------- */
+.slide-2 {
+  background: var(--bg-white);
+}
+
+.slide-2__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左側: 人物写真エリア ---- */
+.slide-2__left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(60vh, 38%);
+  height: min(60vh, 80%);
+  z-index: 3;
+}
+
+/* 写真プレースホルダー（正方形） */
+.slide-2__photo {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-2__left .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-2__left .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-2__left .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- 中央: ブルー帯 + 縦書きタイトル ---- */
+.slide-2__center {
+  position: absolute;
+  left: 26%;
+  top: 0;
+  width: 18%;
+  height: 100%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.slide-2__title {
+  font-family: var(--font-en);
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  color: #ffffff;
+  writing-mode: vertical-lr;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ---- 右側: 目次リスト ---- */
+.slide-2__right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 60px 56px 60px 48px;
+}
+
+.slide-2__list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.slide-2__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 0;
+}
+
+.slide-2__icon {
+  color: var(--accent);
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 4px;
+  line-height: 1;
+}
+
+.slide-2__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slide-2__label {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.slide-2__desc {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* 項目間の区切り線 */
+.slide-2__separator {
+  list-style: none;
+  height: 1px;
+  background: var(--border);
+  width: 100%;
+}
+
+/* ---- スライド2 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-2__left {
+    display: none;
+  }
+
+  .slide-2__center {
+    left: 0;
+    width: 100%;
+    height: 14%;
+    top: 0;
+  }
+
+  .slide-2__title {
+    writing-mode: horizontal-tb;
+    font-size: clamp(28px, 6vw, 40px);
+    letter-spacing: 0.15em;
+  }
+
+  .slide-2__right {
+    width: 100%;
+    top: 14%;
+    height: 86%;
+    padding: 24px;
+    align-items: flex-start;
+  }
+
+  .slide-2__item {
+    padding: 16px 0;
+  }
+
+  .slide-2__label {
+    font-size: 18px;
+  }
+}
+
+/* ----------------------------------------
+   スライド3: パート区切り + About導入
+   ---------------------------------------- */
+.slide-3 {
+  background: var(--bg-white);
+}
+
+.slide-3__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: ブルー帯 + PART ONE ---- */
+.slide-3__left {
+  width: 10%;
+  height: 100%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide-3__part {
+  font-family: var(--font-en);
+  font-size: clamp(20px, 2.5vw, 36px);
+  font-weight: 600;
+  color: #ffffff;
+  writing-mode: vertical-lr;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ---- 中央: テキストコンテンツ ---- */
+.slide-3__center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 60px 56px;
+}
+
+.slide-3__center-inner {
+  max-width: 520px;
+}
+
+.slide-3__heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.slide-3__icon {
+  color: var(--accent);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.slide-3__title {
+  font-family: var(--font-en);
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+}
+
+.slide-3__desc {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 44px;
+}
+
+/* MORE ボタン（テキスト + 矢印） */
+.slide-3__btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.slide-3__btn-text {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.12em;
+  padding: 16px 32px;
+  border: 2px solid var(--border);
+  border-right: none;
+}
+
+.slide-3__btn-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 54px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 20px;
+  border: 2px solid var(--accent);
+}
+
+.slide-3__btn:hover .slide-3__btn-text {
+  background: var(--accent-light);
+}
+
+.slide-3__btn:hover .slide-3__btn-arrow {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* ---- 右: 人物写真プレースホルダー ---- */
+.slide-3__right {
+  width: 38%;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide-3__right .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-3__right .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-3__right .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- スライド3 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-3__layout {
+    flex-direction: column;
+  }
+
+  .slide-3__left {
+    width: 100%;
+    height: 10%;
+  }
+
+  .slide-3__part {
+    writing-mode: horizontal-tb;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+  }
+
+  .slide-3__right {
+    display: none;
+  }
+
+  .slide-3__center {
+    padding: 32px 24px;
+  }
+
+  .slide-3__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド4: Welcome / 左画像+右テキスト
+   ---------------------------------------- */
+.slide-4 {
+  background: var(--bg-white);
+}
+
+.slide-4__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: 写真（余白付き） ---- */
+.slide-4__left {
+  position: absolute;
+  left: 6%;
+  top: 10%;
+  width: 38%;
+  bottom: 10%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.slide-4__left .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-4__left .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-4__left .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- 右端: ブルー装飾帯 ---- */
+.slide-4__deco {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 5%;
+  background: var(--accent);
+  z-index: 1;
+}
+
+/* ---- 中央右: テキスト ---- */
+.slide-4__right {
+  position: absolute;
+  left: 48%;
+  top: 0;
+  right: 6%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-4__right-inner {
+  max-width: 480px;
+}
+
+.slide-4__title {
+  font-family: var(--font-en);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 36px;
+}
+
+.slide-4__desc {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.slide-4__desc:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- スライド4 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-4__left {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    height: 40%;
+  }
+
+  .slide-4__layout {
+    flex-direction: column;
+  }
+
+  .slide-4__right {
+    position: relative;
+    left: auto;
+    right: auto;
+    height: auto;
+    flex: 1;
+    padding: 32px 24px;
+  }
+
+  .slide-4__deco {
+    display: none;
+  }
+
+  .slide-4__title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+}
+
+/* ----------------------------------------
+   スライド5: サービス紹介 / 左リスト+右3分割写真
+   ---------------------------------------- */
+.slide-5 {
+  background: var(--bg-white);
+}
+
+.slide-5__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左端: ブルー装飾帯 ---- */
+.slide-5__deco {
+  position: absolute;
+  left: 0;
+  top: 14%;
+  bottom: 14%;
+  width: 3.5%;
+  background: var(--accent);
+  z-index: 1;
+}
+
+/* ---- 左: サービスリスト ---- */
+.slide-5__left {
+  width: 35%;
+  position: absolute;
+  left: 8%;
+  top: 6%;
+  bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 32px 0 24px;
+  gap: 48px;
+}
+
+.slide-5__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.slide-5__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 14px;
+}
+
+.slide-5__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-5__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slide-5__name {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.slide-5__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---- 右: 3分割写真 ---- */
+.slide-5__right {
+  position: absolute;
+  right: 0;
+  top: 14%;
+  bottom: 14%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 56px 0 0;
+}
+
+.slide-5__photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slide-5__photo .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.slide-5__photo .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-5__photo .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* 白い縦線2本で3分割の見た目を作る */
+.slide-5__dividers {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slide-5__dividers::before,
+.slide-5__dividers::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: var(--bg-white);
+}
+
+.slide-5__dividers::before {
+  left: 33.33%;
+}
+
+.slide-5__dividers::after {
+  left: 66.66%;
+}
+
+/* ---- スライド5 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-5__layout {
+    flex-direction: column;
+  }
+
+  .slide-5__left {
+    width: 100%;
+    padding: 32px 24px;
+    gap: 28px;
+  }
+
+  .slide-5__right {
+    width: 100%;
+    padding: 0 24px 32px;
+  }
+
+  .slide-5__photo {
+    height: 200px;
+  }
+
+  .slide-5__name {
+    font-size: 17px;
+  }
+}
+
+/* ----------------------------------------
+   スライド6: チームメンバー紹介（横3列カード）
+   ---------------------------------------- */
+.slide-6 {
+  background: var(--bg-white);
+}
+
+/* 上部ブルー帯 */
+.slide-6__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: var(--accent);
+}
+
+/* タイトル */
+.slide-6__title {
+  position: absolute;
+  top: 6%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-en);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  z-index: 2;
+}
+
+/* カードコンテナ */
+.slide-6__cards {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  padding: 0 56px;
+  z-index: 2;
+}
+
+/* 各カード */
+.slide-6__card {
+  flex: 1;
+  max-width: 360px;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* カード内の写真 */
+.slide-6__photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-6__photo .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-6__photo .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-6__photo .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* カード内のテキスト */
+.slide-6__info {
+  padding: 24px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.slide-6__name {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.slide-6__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.slide-6__role {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ---- スライド6 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-6__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    top: 18%;
+    overflow-y: auto;
+  }
+
+  .slide-6__card {
+    flex-direction: row;
+    max-width: 100%;
+  }
+
+  .slide-6__photo {
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+  }
+
+  .slide-6__info {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .slide-6__title {
+    font-size: 28px;
+  }
+}
+
+/* ----------------------------------------
+   スライド7: Our Service / サービス紹介
+   ---------------------------------------- */
+.slide-7 {
+  background: var(--bg-white);
+}
+
+/* ---- 左: ブルー縦帯 ---- */
+.slide-7__left {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 10%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.slide-7__part {
+  font-family: var(--font-en);
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 600;
+  color: #ffffff;
+  writing-mode: vertical-lr;
+  letter-spacing: 0.2em;
+}
+
+/* ---- 右コンテンツエリア ---- */
+.slide-7__main {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  right: 0;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 上部: 写真 */
+.slide-7__photo {
+  width: 100%;
+  height: 58%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 4% 0;
+  width: calc(100% - 8%);
+}
+
+.slide-7__photo .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-7__photo .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-7__photo .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* 下部: アイコン3列 */
+.slide-7__services {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0 8%;
+  position: relative;
+  margin-top: -36px;
+  z-index: 3;
+}
+
+.slide-7__service {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.slide-7__icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  flex-shrink: 0;
+}
+
+.slide-7__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-7__name {
+  font-family: var(--font-en);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.08em;
+}
+
+.slide-7__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- スライド7 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-7__left {
+    width: 100%;
+    height: 8%;
+  }
+
+  .slide-7__part {
+    writing-mode: horizontal-tb;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  .slide-7__main {
+    left: 0;
+    top: 8%;
+    height: 92%;
+  }
+
+  .slide-7__photo {
+    height: 40%;
+    margin: 2% 4% 0;
+    width: calc(100% - 8%);
+  }
+
+  .slide-7__services {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: -24px;
+  }
+}
+
+/* ----------------------------------------
+   スライド8: Business Slide / テキスト+アイコン数値
+   ---------------------------------------- */
+.slide-8 {
+  background: var(--bg-white);
+}
+
+.slide-8__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左側: 白背景 ---- */
+.slide-8__left {
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+}
+
+.slide-8__text {
+  margin-bottom: 48px;
+  max-width: 360px;
+}
+
+.slide-8__title {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.slide-8__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* 数値アイコン3列 */
+.slide-8__stats {
+  display: flex;
+  gap: 40px;
+}
+
+.slide-8__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.slide-8__stat-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.slide-8__stat-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-8__stat-value {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* ---- 右側: ブルー背景 ---- */
+.slide-8__right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  background: var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+/* 写真（白枠付き、浮いた見た目） */
+.slide-8__photo {
+  width: 55%;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.2);
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.slide-8__photo .placeholder-image--on-blue {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.slide-8__photo .placeholder-image--on-blue .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-8__photo .placeholder-image--on-blue .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-8__name {
+  font-family: var(--font-en);
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.slide-8__person-desc {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  text-align: center;
+  max-width: 360px;
+}
+
+/* ---- スライド8 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-8__layout {
+    flex-direction: column;
+  }
+
+  .slide-8__left {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-8__right {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-8__photo {
+    width: 50%;
+  }
+
+  .slide-8__stats {
+    gap: 24px;
+  }
+
+  .slide-8__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド9: パート区切り（PART TWO）+ Our Works
+   スライド3ベース、左に2本帯追加
+   ---------------------------------------- */
+.slide-9 {
+  background: var(--bg-white);
+}
+
+.slide-9__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: ブルー帯 + PART TWO（スライド3と同じ） ---- */
+.slide-9__left {
+  width: 10%;
+  height: 100%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide-9__part {
+  font-family: var(--font-en);
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 600;
+  color: #ffffff;
+  writing-mode: vertical-lr;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ---- 中央: テキストコンテンツ ---- */
+.slide-9__center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 56px;
+}
+
+.slide-9__center-inner {
+  max-width: 520px;
+}
+
+.slide-9__heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.slide-9__icon {
+  color: var(--accent);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.slide-9__title {
+  font-family: var(--font-en);
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+}
+
+.slide-9__desc {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 44px;
+}
+
+/* MORE ボタン（スライド3と同じ構成） */
+.slide-9__btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.slide-9__btn-text {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.12em;
+  padding: 16px 32px;
+  border: 2px solid var(--border);
+  border-right: none;
+}
+
+.slide-9__btn-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 54px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 20px;
+  border: 2px solid var(--accent);
+}
+
+.slide-9__btn:hover .slide-9__btn-text {
+  background: var(--accent-light);
+}
+
+.slide-9__btn:hover .slide-9__btn-arrow {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* ---- 右: 写真プレースホルダー ---- */
+.slide-9__right {
+  width: 38%;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide-9__right .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-9__right .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-9__right .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- スライド9 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-9__layout {
+    flex-direction: column;
+  }
+
+  .slide-9__left {
+    width: 100%;
+    height: 10%;
+  }
+
+  .slide-9__bars {
+    height: 100%;
+    flex-direction: row;
+  }
+
+  .slide-9__bar-thick {
+    width: 100%;
+    height: 48px;
+  }
+
+  .slide-9__bar-thin {
+    display: none;
+  }
+
+  .slide-9__part {
+    writing-mode: horizontal-tb;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+  }
+
+  .slide-9__right {
+    display: none;
+  }
+
+  .slide-9__center {
+    padding: 32px 24px;
+  }
+
+  .slide-9__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド10: About Our CEO / 人物紹介
+   ---------------------------------------- */
+.slide-10 {
+  background: var(--bg-white);
+}
+
+/* 右端ブルー装飾帯（画面幅の25%） */
+.slide-10__deco {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--accent);
+  z-index: 1;
+}
+
+.slide-10__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- 左側: テキスト + アイコン ---- */
+.slide-10__left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 24px;
+}
+
+.slide-10__left-inner {
+  max-width: 520px;
+  width: 100%;
+}
+
+.slide-10__title {
+  font-family: var(--font-en);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.slide-10__desc {
+  font-family: var(--font-en);
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 48px;
+  max-width: 520px;
+  text-align: left;
+}
+
+/* アイコン2列 */
+.slide-10__features {
+  display: flex;
+  gap: 48px;
+}
+
+.slide-10__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.slide-10__feature-icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.slide-10__feature-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-10__feature-name {
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.08em;
+}
+
+.slide-10__feature-desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- 右側: 写真（ブルー帯の左端を中心に配置） ---- */
+.slide-10__right {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
+  transform: translateX(50%);
+  width: 30%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-10__photo {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-10__photo .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-10__photo .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-10__photo .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- スライド10 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-10__layout {
+    flex-direction: column;
+  }
+
+  .slide-10__left {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-10__right {
+    display: none;
+  }
+
+  .slide-10__deco {
+    display: none;
+  }
+
+  .slide-10__title {
+    font-size: 32px;
+  }
+
+  .slide-10__features {
+    gap: 24px;
+  }
+}
+
+/* ----------------------------------------
+   スライド11: Image Gallery
+   ---------------------------------------- */
+.slide-11 {
+  background: var(--bg-white);
+}
+
+.slide-11__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: 重なる写真2枚 ---- */
+.slide-11__left {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 48px 24px 48px 48px;
+}
+
+/* 左の写真（上にずらす） */
+.slide-11__photo-back {
+  width: 42%;
+  aspect-ratio: 3 / 4;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-18%);
+}
+
+/* 右の写真（下にずらす） */
+.slide-11__photo-front {
+  width: 42%;
+  aspect-ratio: 3 / 4;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(18%);
+}
+
+.slide-11__photo-back .placeholder-image--dark,
+.slide-11__photo-front .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-11__photo-back .placeholder-image--dark .placeholder-image__icon,
+.slide-11__photo-front .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-11__photo-back .placeholder-image--dark .placeholder-image__label,
+.slide-11__photo-front .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- 右: テキスト + アイコンリスト ---- */
+.slide-11__right {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-11__right-inner {
+  max-width: 480px;
+}
+
+.slide-11__title {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.slide-11__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* アイコン付きリスト */
+.slide-11__items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.slide-11__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.slide-11__item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  flex-shrink: 0;
+}
+
+.slide-11__item-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-11__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slide-11__item-name {
+  font-family: var(--font-en);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.slide-11__item-desc {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- スライド11 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-11__layout {
+    flex-direction: column;
+  }
+
+  .slide-11__left {
+    width: 100%;
+    height: 40%;
+  }
+
+  .slide-11__right {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-11__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド12: Our Business Table / アイコン3列
+   ---------------------------------------- */
+.slide-12 {
+  background: var(--bg-white);
+}
+
+.slide-12__layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 80px;
+  gap: 40px;
+}
+
+/* ---- 上部: タイトル + 説明 ---- */
+.slide-12__header {
+  text-align: center;
+  max-width: 640px;
+}
+
+.slide-12__title {
+  font-family: var(--font-en);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.slide-12__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ---- 下部: ブルーカード3枚 ---- */
+.slide-12__cards {
+  display: flex;
+  gap: 28px;
+  width: 100%;
+  max-width: 960px;
+}
+
+.slide-12__card {
+  flex: 1;
+  background: var(--accent);
+  padding: 40px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+/* アイコン + 下線 */
+.slide-12__icon {
+  width: 80px;
+  height: 80px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.slide-12__icon::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 15%;
+  width: 70%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.slide-12__name {
+  margin-top: 20px;
+}
+
+.slide-12__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-12__name {
+  font-family: var(--font-en);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.12em;
+}
+
+.slide-12__card-desc {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+/* ---- スライド12 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-12__layout {
+    padding: 32px 24px;
+    gap: 32px;
+  }
+
+  .slide-12__cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .slide-12__card {
+    padding: 24px 20px;
+  }
+
+  .slide-12__title {
+    font-size: 28px;
+  }
+}
+
+/* ----------------------------------------
+   スライド13: Mockups Slide（スライド4流用）
+   ---------------------------------------- */
+.slide-13 {
+  background: var(--bg-white);
+}
+
+.slide-13__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* 右端ブルー装飾帯 */
+.slide-13__deco {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 5%;
+  background: var(--accent);
+  z-index: 1;
+}
+
+/* 左: 写真（余白付き、横長） */
+.slide-13__left {
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38%;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.slide-13__left .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-13__left .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-13__left .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* 右: テキスト */
+.slide-13__right {
+  position: absolute;
+  left: 48%;
+  top: 0;
+  right: 6%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-13__right-inner {
+  max-width: 480px;
+}
+
+.slide-13__title {
+  font-family: var(--font-en);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.slide-13__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ---- スライド13 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-13__left {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    height: 40%;
+  }
+
+  .slide-13__layout {
+    flex-direction: column;
+  }
+
+  .slide-13__right {
+    position: relative;
+    left: auto;
+    right: auto;
+    height: auto;
+    flex: 1;
+    padding: 32px 24px;
+  }
+
+  .slide-13__deco {
+    display: none;
+  }
+
+  .slide-13__title {
+    font-size: 36px;
+  }
+}
+
+/* ----------------------------------------
+   スライド14: Workflow Slide
+   ---------------------------------------- */
+.slide-14 {
+  background: var(--bg-white);
+}
+
+.slide-14__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 48px;
+  gap: 0;
+}
+
+/* 左: ブルーテキストブロック */
+.slide-14__text-block {
+  width: 40%;
+  height: 100%;
+  background: #5a8db8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+}
+
+.slide-14__title {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.slide-14__desc {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+
+/* 右: 写真 */
+.slide-14__photo-right {
+  flex: 1;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-14__photo-right .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-14__photo-right .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-14__photo-right .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- スライド14 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-14__photo-top {
+    width: 100%;
+    height: 30%;
+  }
+
+  .slide-14__text-block {
+    width: 100%;
+    top: 30%;
+    height: 35%;
+    padding: 24px;
+  }
+
+  .slide-14__photo-right {
+    display: none;
+  }
+
+  .slide-14__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド16: Our Business / 六角形アイコン4列
+   ---------------------------------------- */
+.slide-16 {
+  background: var(--bg-white);
+  flex-direction: column;
+}
+
+/* ---- 上部: 写真+オーバーレイ+テキスト ---- */
+.slide-16__hero {
+  position: relative;
+  width: 100%;
+  height: 55%;
+}
+
+.slide-16__hero-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-16__hero-bg .placeholder-image--dark {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.slide-16__hero-bg .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.slide-16__hero-bg .placeholder-image--dark .placeholder-image__label {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.slide-16__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.slide-16__hero-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  padding: 0 48px;
+}
+
+.slide-16__title {
+  font-family: var(--font-en);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.slide-16__desc {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ---- 下部: 六角形アイコン4列 ---- */
+.slide-16__icons {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 64px;
+  margin-top: -90px;
+  position: relative;
+  z-index: 3;
+}
+
+.slide-16__item {
+  flex: 1;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+/* 六角形ラッパー */
+.slide-16__hex-wrap {
+  width: 150px;
+  height: 180px;
+  position: relative;
+}
+
+/* 六角形（clip-path） */
+.slide-16__hex {
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  color: #ffffff;
+}
+
+.slide-16__hex svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-16__name {
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.1em;
+}
+
+.slide-16__item-desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- スライド16 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-16__hero {
+    height: 40%;
+    margin: 16px 16px 0;
+    width: calc(100% - 32px);
+  }
+
+  .slide-16__icons {
+    gap: 16px;
+    padding: 0 24px;
+    margin-top: -28px;
+  }
+
+  .slide-16__hex-wrap {
+    width: 56px;
+    height: 56px;
+  }
+
+  .slide-16__hex {
+    padding: 14px;
+  }
+
+  .slide-16__name {
+    font-size: 12px;
+  }
+
+  .slide-16__item-desc {
+    display: none;
+  }
+}
+
+/* ----------------------------------------
+   スライド17: Chart Slide / ダイヤモンド写真
+   ---------------------------------------- */
+.slide-17 {
+  background: var(--bg-white);
+}
+
+.slide-17__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: テキスト + アイコンリスト ---- */
+.slide-17__left {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-17__left-inner {
+  max-width: 420px;
+}
+
+.slide-17__title {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.slide-17__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.slide-17__items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slide-17__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.slide-17__item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+.slide-17__item-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-17__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slide-17__item-name {
+  font-family: var(--font-en);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.slide-17__item-desc {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- 右: ダイヤモンド型写真 ---- */
+.slide-17__right {
+  width: 55%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* ブルー装飾ダイヤモンド（後ろ） */
+.slide-17__diamond-deco {
+  position: absolute;
+  width: 52vh;
+  height: 52vh;
+  background: var(--accent);
+  transform: rotate(45deg);
+  top: -8%;
+  right: -10%;
+  z-index: 1;
+}
+
+/* ブルー装飾ダイヤモンド（左下） */
+.slide-17__diamond-deco--bottom {
+  width: 20vh;
+  height: 20vh;
+  top: auto;
+  bottom: 8%;
+  right: auto;
+  left: 5%;
+}
+
+/* ブルー装飾ダイヤモンド（写真の下） */
+.slide-17__diamond-deco--under {
+  width: 28vh;
+  height: 28vh;
+  top: auto;
+  bottom: -2%;
+  right: 20%;
+}
+
+/* 写真ダイヤモンド（手前） */
+.slide-17__diamond {
+  width: 56vh;
+  height: 56vh;
+  transform: rotate(45deg);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.slide-17__diamond-inner {
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  transform: rotate(-45deg);
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-17__diamond-inner .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-17__diamond-inner .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-17__diamond-inner .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- スライド17 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-17__layout {
+    flex-direction: column;
+  }
+
+  .slide-17__left {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-17__right {
+    width: 100%;
+    height: 40%;
+  }
+
+  .slide-17__diamond {
+    width: 30vh;
+    height: 30vh;
+  }
+
+  .slide-17__diamond-deco {
+    width: 36vh;
+    height: 36vh;
+  }
+
+  .slide-17__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド18: Chart Slide / データカード
+   ---------------------------------------- */
+.slide-18 {
+  background: var(--bg-white);
+}
+
+.slide-18__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 48px;
+  gap: 0;
+}
+
+/* ---- 左: 写真ラッパー ---- */
+.slide-18__left-wrap {
+  width: 50%;
+  height: 80%;
+  align-self: center;
+  position: relative;
+}
+
+/* 背景ブルー四角（右に少しのぞかせる） */
+.slide-18__left-bg {
+  position: absolute;
+  top: 50%;
+  right: -8%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 70%;
+  background: var(--accent);
+  z-index: 1;
+}
+
+/* 写真 */
+.slide-18__left {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.slide-18__left .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-18__left .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-18__left .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- 右: テキスト + チャート ---- */
+.slide-18__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px 60px 48px;
+}
+
+.slide-18__right-inner {
+  max-width: 480px;
+}
+
+.slide-18__title {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.slide-18__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* ドーナツチャート3列 */
+.slide-18__charts {
+  display: flex;
+  gap: 32px;
+}
+
+.slide-18__chart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  position: relative;
+}
+
+.slide-18__donut {
+  width: 100px;
+  height: 100px;
+}
+
+.slide-18__chart-value {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.slide-18__chart-label {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---- スライド18 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-18__layout {
+    flex-direction: column;
+  }
+
+  .slide-18__left {
+    width: 100%;
+    height: 40%;
+  }
+
+  .slide-18__right {
+    padding: 32px 24px;
+  }
+
+  .slide-18__charts {
+    gap: 16px;
+  }
+
+  .slide-18__donut {
+    width: 72px;
+    height: 72px;
+  }
+
+  .slide-18__chart-value {
+    font-size: 16px;
+    top: 24px;
+  }
+
+  .slide-18__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド19: Our Business / 3カラム
+   ---------------------------------------- */
+.slide-19 {
+  background: var(--bg-white);
+}
+
+.slide-19__layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 64px;
+  gap: 40px;
+}
+
+/* ---- 上部: タイトル ---- */
+.slide-19__header {
+  text-align: center;
+  max-width: 600px;
+}
+
+.slide-19__title {
+  font-family: var(--font-en);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.slide-19__desc {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ---- 3カラム ---- */
+.slide-19__columns {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  background: var(--accent);
+}
+
+/* 左右カラム */
+.slide-19__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 140px 30px;
+}
+
+.slide-19__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.slide-19__feature-icon {
+  width: 56px;
+  height: 56px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-19__feature-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-19__feature-name {
+  font-family: var(--font-en);
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+}
+
+.slide-19__feature-desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+/* 中央カラム: 写真 */
+.slide-19__photo {
+  flex: 1.2;
+  align-self: stretch;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-19__photo .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-19__photo .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-19__photo .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- スライド19 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-19__columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .slide-19__col {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .slide-19__photo {
+    width: 80%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .slide-19__title {
+    font-size: 28px;
+  }
+}
+
+/* ----------------------------------------
+   スライド20: Mockups Slide / スマホモックアップ
+   ---------------------------------------- */
+.slide-20 {
+  background: var(--bg-white);
+}
+
+/* 右上三角装飾 ◥ */
+.slide-20__triangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 60vw 100vh 0;
+  border-color: transparent var(--accent) transparent transparent;
+  z-index: 1;
+}
+
+.slide-20__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- 左: テキスト + 数値 ---- */
+.slide-20__left {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-20__left-inner {
+  max-width: 420px;
+}
+
+.slide-20__title {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.slide-20__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.slide-20__stats {
+  display: flex;
+  gap: 48px;
+}
+
+.slide-20__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slide-20__stat-value {
+  font-family: var(--font-en);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.slide-20__stat-label {
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* ---- 右: スマホモックアップ ---- */
+.slide-20__right {
+  width: 55%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-20__phone {
+  width: 36%;
+  aspect-ratio: 9 / 16;
+  background: var(--bg-light);
+  border-radius: 16px;
+  border: 3px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+}
+
+.slide-20__phone--back {
+  left: 10%;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 2;
+}
+
+.slide-20__phone--front {
+  right: 10%;
+  top: 50%;
+  transform: translateY(-40%);
+  z-index: 3;
+}
+
+.slide-20__phone .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-20__phone .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-20__phone .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- スライド20 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-20__layout {
+    flex-direction: column;
+  }
+
+  .slide-20__left {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-20__right {
+    width: 100%;
+    height: 40%;
+  }
+
+  .slide-20__phone {
+    width: 30%;
+  }
+
+  .slide-20__triangle {
+    border-width: 0 60vw 30vh 0;
+  }
+
+  .slide-20__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド22: Image Gallery / 写真グリッド
+   ---------------------------------------- */
+.slide-22 {
+  background: var(--bg-white);
+}
+
+/* 右端ブルー装飾帯 */
+.slide-22__deco {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 5%;
+  background: var(--accent);
+  z-index: 1;
+}
+
+.slide-22__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- 左: 写真グリッド ---- */
+.slide-22__gallery {
+  width: 50%;
+  display: flex;
+  gap: 12px;
+  padding: 48px 24px 48px 48px;
+}
+
+/* 縦長写真（左） */
+.slide-22__photo-tall {
+  flex: 1;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-22__photo-tall .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-22__photo-tall .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-22__photo-tall .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* 右の2枚縦積み */
+.slide-22__photo-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slide-22__photo-small {
+  flex: 1;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-22__photo-small .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-22__photo-small .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-22__photo-small .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- 右: テキスト ---- */
+.slide-22__right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-22__right-inner {
+  max-width: 420px;
+}
+
+.slide-22__title {
+  font-family: var(--font-en);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.slide-22__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* アイコン横並び */
+.slide-22__icons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.slide-22__icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.slide-22__icon-item svg {
+  width: 72px;
+  height: 72px;
+  color: var(--text-dark);
+  stroke: var(--text-dark);
+}
+
+.slide-22__icon-item span {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+/* ---- スライド22 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-22__layout {
+    flex-direction: column;
+  }
+
+  .slide-22__gallery {
+    width: 100%;
+    height: 45%;
+    padding: 24px;
+  }
+
+  .slide-22__right {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-22__deco {
+    display: none;
+  }
+
+  .slide-22__title {
+    font-size: 32px;
+  }
+}

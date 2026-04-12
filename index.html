@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- フォント -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- ========== 共通SVGシンボル定義 ========== -->
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-placeholder" viewBox="0 0 120 80">
+      <circle cx="85" cy="22" r="10" fill="currentColor"/>
+      <path d="M10 70 L35 35 L55 55 L70 40 L110 70 Z" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <!-- ========== プログレスバー ========== -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ========== スライド1: カバー / Hero ========== -->
+  <section class="panel slide-1 is-active" data-section="0">
+    <!-- 背景写真プレースホルダー（暗めオーバーレイ付き） -->
+    <div class="slide-1__bg">
+      <div class="placeholder-image">
+        <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+        <span class="placeholder-image__label">NO IMAGE</span>
+      </div>
+    </div>
+
+    <!-- 右上の幾何学的な斜線装飾 -->
+    <div class="slide-1__lines">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- コンテンツ（左下寄せ） -->
+    <div class="slide-1__content">
+      <h1 class="slide-1__title anim-hidden">REPORT</h1>
+      <p class="slide-1__subtitle anim-hidden">BUSINESS PRESENTATION TEMPLATE</p>
+    </div>
+  </section>
+
+  <!-- ========== スライド2: 目次 / Contents ========== -->
+  <section class="panel slide-2" data-section="1">
+    <div class="slide-2__layout">
+      <!-- 左側: 人物写真プレースホルダー -->
+      <div class="slide-2__left anim-hidden">
+        <div class="slide-2__photo">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 中央: 縦書きタイトル（ブルー帯） -->
+      <div class="slide-2__center">
+        <h2 class="slide-2__title anim-hidden">CONTENT</h2>
+      </div>
+
+      <!-- 右側: 目次リスト -->
+      <div class="slide-2__right">
+        <ul class="slide-2__list">
+          <li class="slide-2__item anim-hidden">
+            <span class="slide-2__icon">&#9654;</span>
+            <div class="slide-2__item-text">
+              <span class="slide-2__label">About Us</span>
+              <p class="slide-2__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </li>
+          <li class="slide-2__separator"></li>
+          <li class="slide-2__item anim-hidden">
+            <span class="slide-2__icon">&#9654;</span>
+            <div class="slide-2__item-text">
+              <span class="slide-2__label">Our Works</span>
+              <p class="slide-2__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </li>
+          <li class="slide-2__separator"></li>
+          <li class="slide-2__item anim-hidden">
+            <span class="slide-2__icon">&#9654;</span>
+            <div class="slide-2__item-text">
+              <span class="slide-2__label">Data Analysis</span>
+              <p class="slide-2__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </li>
+          <li class="slide-2__separator"></li>
+          <li class="slide-2__item anim-hidden">
+            <span class="slide-2__icon">&#9654;</span>
+            <div class="slide-2__item-text">
+              <span class="slide-2__label">Image Gallery</span>
+              <p class="slide-2__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド3: パート区切り + About導入 ========== -->
+  <section class="panel slide-3" data-section="2">
+    <div class="slide-3__layout">
+      <!-- 左: ブルー帯 + PART ONE -->
+      <div class="slide-3__left">
+        <span class="slide-3__part anim-hidden">PART ONE</span>
+      </div>
+
+      <!-- 中央: テキストコンテンツ -->
+      <div class="slide-3__center">
+        <div class="slide-3__center-inner">
+          <div class="slide-3__heading">
+            <span class="slide-3__icon anim-hidden">&#9654;</span>
+            <h2 class="slide-3__title anim-hidden">About Us</h2>
+          </div>
+          <p class="slide-3__desc anim-hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <a href="#" class="slide-3__btn anim-hidden">
+            <span class="slide-3__btn-text">MORE</span>
+            <span class="slide-3__btn-arrow">&#10095;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 右: 人物写真プレースホルダー -->
+      <div class="slide-3__right anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド4: Welcome / 左画像+右テキスト ========== -->
+  <section class="panel slide-4" data-section="3">
+    <!-- 右端ブルー装飾帯 -->
+    <div class="slide-4__deco"></div>
+    <div class="slide-4__layout">
+      <!-- 左: 写真プレースホルダー -->
+      <div class="slide-4__left anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+
+      <!-- 右: テキスト -->
+      <div class="slide-4__right">
+        <div class="slide-4__right-inner">
+          <h2 class="slide-4__title anim-hidden">Welcome</h2>
+          <p class="slide-4__desc anim-hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+          <p class="slide-4__desc anim-hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド5: サービス紹介 / 左リスト+右3分割写真 ========== -->
+  <section class="panel slide-5" data-section="4">
+    <!-- 左端ブルー装飾帯 -->
+    <div class="slide-5__deco"></div>
+    <div class="slide-5__layout">
+      <!-- 左: サービスリスト -->
+      <div class="slide-5__left">
+        <div class="slide-5__item anim-hidden">
+          <div class="slide-5__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="slide-5__item-text">
+            <h3 class="slide-5__name">Service Name</h3>
+            <p class="slide-5__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="slide-5__item anim-hidden">
+          <div class="slide-5__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="slide-5__item-text">
+            <h3 class="slide-5__name">Service Name</h3>
+            <p class="slide-5__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="slide-5__item anim-hidden">
+          <div class="slide-5__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <rect x="9" y="9" width="6" height="6" rx="1"/>
+            </svg>
+          </div>
+          <div class="slide-5__item-text">
+            <h3 class="slide-5__name">Service Name</h3>
+            <p class="slide-5__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右: 3分割写真プレースホルダー -->
+      <div class="slide-5__right anim-hidden">
+        <div class="slide-5__photo">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+          <!-- 白い縦線で3分割の見た目を作る -->
+          <div class="slide-5__dividers"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド6: チームメンバー紹介（横3列カード） ========== -->
+  <section class="panel slide-6" data-section="5">
+    <!-- 上部ブルー帯 -->
+    <div class="slide-6__bg"></div>
+
+    <!-- タイトル -->
+    <h2 class="slide-6__title anim-hidden">Our Team Members</h2>
+
+    <!-- カード3枚 -->
+    <div class="slide-6__cards">
+      <!-- カード1 -->
+      <div class="slide-6__card anim-hidden">
+        <div class="slide-6__photo">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+        <div class="slide-6__info">
+          <h3 class="slide-6__name">Tim Bobon</h3>
+          <p class="slide-6__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="slide-6__role">CEO</span>
+        </div>
+      </div>
+
+      <!-- カード2 -->
+      <div class="slide-6__card anim-hidden">
+        <div class="slide-6__photo">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+        <div class="slide-6__info">
+          <h3 class="slide-6__name">Anne Deilington</h3>
+          <p class="slide-6__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="slide-6__role">Journalist</span>
+        </div>
+      </div>
+
+      <!-- カード3 -->
+      <div class="slide-6__card anim-hidden">
+        <div class="slide-6__photo">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+        <div class="slide-6__info">
+          <h3 class="slide-6__name">Richard Hunman</h3>
+          <p class="slide-6__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <span class="slide-6__role">COO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド7: Our Service / サービス紹介 ========== -->
+  <section class="panel slide-7" data-section="6">
+    <!-- 左: ブルー縦帯 + Our Service -->
+    <div class="slide-7__left">
+      <span class="slide-7__part anim-hidden">Our Service</span>
+    </div>
+
+    <!-- 右コンテンツエリア -->
+    <div class="slide-7__main">
+      <!-- 上部: 写真プレースホルダー -->
+      <div class="slide-7__photo anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+
+      <!-- 下部: アイコン3列 -->
+      <div class="slide-7__services">
+        <div class="slide-7__service anim-hidden">
+          <div class="slide-7__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="14" rx="2"/>
+              <path d="M3 9h18"/>
+              <path d="M9 17v4M15 17v4M5 21h14"/>
+            </svg>
+          </div>
+          <h3 class="slide-7__name">ADVERTISING</h3>
+          <p class="slide-7__desc">Frequently, your initial form choice to Italian out.</p>
+        </div>
+        <div class="slide-7__service anim-hidden">
+          <div class="slide-7__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <path d="M8 6h8M8 10h8M8 14h4"/>
+            </svg>
+          </div>
+          <h3 class="slide-7__name">LAYOUTS</h3>
+          <p class="slide-7__desc">Frequently, your initial form choice to Italian out.</p>
+        </div>
+        <div class="slide-7__service anim-hidden">
+          <div class="slide-7__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="slide-7__name">LAUNCH</h3>
+          <p class="slide-7__desc">Frequently, your initial form choice to Italian out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド8: Business Slide / テキスト+アイコン数値 ========== -->
+  <section class="panel slide-8" data-section="7">
+    <div class="slide-8__layout">
+      <!-- 左側: 白背景 -->
+      <div class="slide-8__left">
+        <div class="slide-8__text">
+          <h2 class="slide-8__title anim-hidden">Business Slide</h2>
+          <p class="slide-8__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that in terms of viewership metrics and reach consistently maintains sound standards.</p>
+        </div>
+        <div class="slide-8__stats">
+          <div class="slide-8__stat anim-hidden">
+            <div class="slide-8__stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="14" rx="2"/>
+                <path d="M3 9h18"/>
+                <path d="M9 17v4M15 17v4M5 21h14"/>
+              </svg>
+            </div>
+            <span class="slide-8__stat-value">8M</span>
+          </div>
+          <div class="slide-8__stat anim-hidden">
+            <div class="slide-8__stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <span class="slide-8__stat-value">125K</span>
+          </div>
+          <div class="slide-8__stat anim-hidden">
+            <div class="slide-8__stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"/>
+                <path d="M8 6h8M8 10h8M8 14h4"/>
+              </svg>
+            </div>
+            <span class="slide-8__stat-value">8M</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右側: ブルー背景 + 人物紹介 -->
+      <div class="slide-8__right">
+        <div class="slide-8__photo anim-hidden">
+          <div class="placeholder-image placeholder-image--on-blue">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+        <h3 class="slide-8__name anim-hidden">Tim Bobon</h3>
+        <p class="slide-8__person-desc anim-hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド9: パート区切り（PART TWO）+ Our Works ========== -->
+  <section class="panel slide-9" data-section="8">
+    <div class="slide-9__layout">
+      <!-- 左: ブルー帯 + PART TWO -->
+      <div class="slide-9__left">
+        <span class="slide-9__part anim-hidden">PART TWO</span>
+      </div>
+
+      <!-- 中央: テキストコンテンツ -->
+      <div class="slide-9__center">
+        <div class="slide-9__center-inner">
+          <div class="slide-9__heading">
+            <span class="slide-9__icon anim-hidden">&#9654;</span>
+            <h2 class="slide-9__title anim-hidden">Our Works</h2>
+          </div>
+          <p class="slide-9__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+          <a href="#" class="slide-9__btn anim-hidden">
+            <span class="slide-9__btn-text">MORE</span>
+            <span class="slide-9__btn-arrow">&#10095;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 右: 人物写真プレースホルダー -->
+      <div class="slide-9__right anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド10: About Our CEO / 人物紹介 ========== -->
+  <section class="panel slide-10" data-section="9">
+    <!-- 右端ブルー装飾帯 -->
+    <div class="slide-10__deco"></div>
+
+    <div class="slide-10__layout">
+      <!-- 左側: テキスト + アイコン -->
+      <div class="slide-10__left">
+        <div class="slide-10__left-inner">
+        <h2 class="slide-10__title anim-hidden">About Our<br>CEO</h2>
+        <p class="slide-10__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+        <div class="slide-10__features">
+          <div class="slide-10__feature anim-hidden">
+            <div class="slide-10__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"/>
+                <path d="M8 6h8M8 10h8M8 14h4"/>
+              </svg>
+            </div>
+            <h3 class="slide-10__feature-name">LAYOUTS</h3>
+            <p class="slide-10__feature-desc">Frequently, your initial form choice to Italian out.</p>
+          </div>
+          <div class="slide-10__feature anim-hidden">
+            <div class="slide-10__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="slide-10__feature-name">LAUNCH</h3>
+            <p class="slide-10__feature-desc">Frequently, your initial form choice to Italian out.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- 右側: 写真プレースホルダー -->
+      <div class="slide-10__right anim-hidden">
+        <div class="slide-10__photo">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド11: Image Gallery ========== -->
+  <section class="panel slide-11" data-section="10">
+    <div class="slide-11__layout">
+      <!-- 左: 重なる写真2枚 -->
+      <div class="slide-11__left">
+        <div class="slide-11__photo-back anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+        <div class="slide-11__photo-front anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右: テキスト + アイコンリスト -->
+      <div class="slide-11__right">
+        <div class="slide-11__right-inner">
+          <h2 class="slide-11__title anim-hidden">Image Gallery</h2>
+          <p class="slide-11__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+          <div class="slide-11__items">
+            <div class="slide-11__item anim-hidden">
+              <div class="slide-11__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="slide-11__item-text">
+                <h3 class="slide-11__item-name">Service Name</h3>
+                <p class="slide-11__item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="slide-11__item anim-hidden">
+              <div class="slide-11__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="slide-11__item-text">
+                <h3 class="slide-11__item-name">Service Name</h3>
+                <p class="slide-11__item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド12: Our Business Table / アイコン3列 ========== -->
+  <section class="panel slide-12" data-section="11">
+    <div class="slide-12__layout">
+      <!-- 上部: タイトル + 説明 -->
+      <div class="slide-12__header">
+        <h2 class="slide-12__title anim-hidden">Our Business Table</h2>
+        <p class="slide-12__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+      </div>
+
+      <!-- 下部: ブルーカード3枚 -->
+      <div class="slide-12__cards">
+        <div class="slide-12__card anim-hidden">
+          <div class="slide-12__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3 class="slide-12__name">CREATIVITY</h3>
+          <p class="slide-12__card-desc">We provide creative solutions. Style subheading depending on stage.</p>
+        </div>
+        <div class="slide-12__card anim-hidden">
+          <div class="slide-12__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="slide-12__name">INSPIRATION</h3>
+          <p class="slide-12__card-desc">We provide creative solutions. Style subheading depending on stage.</p>
+        </div>
+        <div class="slide-12__card anim-hidden">
+          <div class="slide-12__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3 class="slide-12__name">TEAMWORK</h3>
+          <p class="slide-12__card-desc">We provide creative solutions. Style subheading depending on stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド13: Mockups Slide ========== -->
+  <section class="panel slide-13" data-section="12">
+    <!-- 右端ブルー装飾帯 -->
+    <div class="slide-13__deco"></div>
+    <div class="slide-13__layout">
+      <!-- 左: モックアップ写真プレースホルダー -->
+      <div class="slide-13__left anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+
+      <!-- 右: テキスト -->
+      <div class="slide-13__right">
+        <div class="slide-13__right-inner">
+          <h2 class="slide-13__title anim-hidden">Mockups<br>Slide</h2>
+          <p class="slide-13__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド14: Workflow Slide ========== -->
+  <section class="panel slide-14" data-section="13">
+    <div class="slide-14__inner">
+      <!-- 左: ブルーテキストブロック -->
+      <div class="slide-14__text-block">
+        <h2 class="slide-14__title anim-hidden">Workflow<br>Slide</h2>
+        <p class="slide-14__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+      </div>
+
+      <!-- 右: 写真プレースホルダー -->
+      <div class="slide-14__photo-right anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド15: パート区切り（PART THREE）+ Data Analysis ========== -->
+  <section class="panel slide-15" data-section="14">
+    <div class="slide-9__layout">
+      <!-- 左: ブルー帯 + PART THREE -->
+      <div class="slide-9__left">
+        <span class="slide-9__part anim-hidden">PART THREE</span>
+      </div>
+
+      <!-- 中央: テキストコンテンツ -->
+      <div class="slide-9__center">
+        <div class="slide-9__center-inner">
+          <div class="slide-9__heading">
+            <span class="slide-9__icon anim-hidden">&#9654;</span>
+            <h2 class="slide-9__title anim-hidden">Data Analysis</h2>
+          </div>
+          <p class="slide-9__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+          <a href="#" class="slide-9__btn anim-hidden">
+            <span class="slide-9__btn-text">MORE</span>
+            <span class="slide-9__btn-arrow">&#10095;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 右: 写真プレースホルダー -->
+      <div class="slide-9__right anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド16: Our Business / 六角形アイコン4列 ========== -->
+  <section class="panel slide-16" data-section="15">
+    <!-- 上部: 写真+オーバーレイ+テキスト -->
+    <div class="slide-16__hero">
+      <div class="slide-16__hero-bg">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+      <div class="slide-16__hero-overlay"></div>
+      <div class="slide-16__hero-text">
+        <h2 class="slide-16__title anim-hidden">Our Business</h2>
+        <p class="slide-16__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+      </div>
+    </div>
+
+    <!-- 下部: 六角形アイコン4列 -->
+    <div class="slide-16__icons">
+      <div class="slide-16__item anim-hidden">
+        <div class="slide-16__hex-wrap">
+          <div class="slide-16__hex">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="slide-16__name">VIDEO</h3>
+        <p class="slide-16__item-desc">Frequently, your initial form choice to Italian out.</p>
+      </div>
+      <div class="slide-16__item anim-hidden">
+        <div class="slide-16__hex-wrap">
+          <div class="slide-16__hex">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 10c0 3.976-7 10-7 10s-7-6.024-7-10a7 7 0 0114 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="slide-16__name">ADVERTISING</h3>
+        <p class="slide-16__item-desc">Frequently, your initial form choice to Italian out.</p>
+      </div>
+      <div class="slide-16__item anim-hidden">
+        <div class="slide-16__hex-wrap">
+          <div class="slide-16__hex">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <path d="M8 6h8M8 10h8M8 14h4"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="slide-16__name">LAYOUTS</h3>
+        <p class="slide-16__item-desc">Frequently, your initial form choice to Italian out.</p>
+      </div>
+      <div class="slide-16__item anim-hidden">
+        <div class="slide-16__hex-wrap">
+          <div class="slide-16__hex">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="slide-16__name">LAUNCH</h3>
+        <p class="slide-16__item-desc">Frequently, your initial form choice to Italian out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド17: Chart Slide / ダイヤモンド写真 ========== -->
+  <section class="panel slide-17" data-section="16">
+    <div class="slide-17__layout">
+      <!-- 左: テキスト + アイコンリスト -->
+      <div class="slide-17__left">
+        <div class="slide-17__left-inner">
+          <h2 class="slide-17__title anim-hidden">Chart Slide</h2>
+          <p class="slide-17__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+          <div class="slide-17__items">
+            <div class="slide-17__item anim-hidden">
+              <div class="slide-17__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="slide-17__item-text">
+                <h3 class="slide-17__item-name">Service Name</h3>
+                <p class="slide-17__item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="slide-17__item anim-hidden">
+              <div class="slide-17__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="slide-17__item-text">
+                <h3 class="slide-17__item-name">Service Name</h3>
+                <p class="slide-17__item-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右: ダイヤモンド型写真 -->
+      <div class="slide-17__right">
+        <!-- ブルー装飾ダイヤモンド（後ろ・上） -->
+        <div class="slide-17__diamond-deco anim-hidden"></div>
+        <!-- ブルー装飾ダイヤモンド（後ろ・下） -->
+        <div class="slide-17__diamond-deco slide-17__diamond-deco--bottom anim-hidden"></div>
+        <!-- ブルー装飾ダイヤモンド（写真の下） -->
+        <div class="slide-17__diamond-deco slide-17__diamond-deco--under anim-hidden"></div>
+        <!-- 写真ダイヤモンド（手前） -->
+        <div class="slide-17__diamond anim-hidden">
+          <div class="slide-17__diamond-inner">
+            <div class="placeholder-image placeholder-image--dark">
+              <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+              <span class="placeholder-image__label">NO IMAGE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド18: Chart Slide / データカード ========== -->
+  <section class="panel slide-18" data-section="17">
+    <div class="slide-18__layout">
+      <!-- 左: 写真 + 背景ブルー四角 -->
+      <div class="slide-18__left-wrap">
+        <div class="slide-18__left-bg anim-hidden"></div>
+        <div class="slide-18__left anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+        </div>
+      </div>
+
+      <!-- 右: テキスト + ドーナツチャート -->
+      <div class="slide-18__right">
+        <div class="slide-18__right-inner">
+          <h2 class="slide-18__title anim-hidden">Chart Slide</h2>
+          <p class="slide-18__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data.</p>
+
+          <!-- ドーナツチャート3つ -->
+          <div class="slide-18__charts">
+            <div class="slide-18__chart anim-hidden" data-percent="76">
+              <svg class="slide-18__donut" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="8"/>
+                <circle class="slide-18__donut-fill" cx="60" cy="60" r="50" fill="none" stroke="var(--accent)" stroke-width="8" stroke-dasharray="239 315" stroke-dashoffset="0" transform="rotate(-90 60 60)" stroke-linecap="round"/>
+              </svg>
+              <span class="slide-18__chart-value">76%</span>
+              <p class="slide-18__chart-label">Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="slide-18__chart anim-hidden" data-percent="61">
+              <svg class="slide-18__donut" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="8"/>
+                <circle class="slide-18__donut-fill" cx="60" cy="60" r="50" fill="none" stroke="var(--accent)" stroke-width="8" stroke-dasharray="192 315" stroke-dashoffset="0" transform="rotate(-90 60 60)" stroke-linecap="round"/>
+              </svg>
+              <span class="slide-18__chart-value">61%</span>
+              <p class="slide-18__chart-label">Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="slide-18__chart anim-hidden" data-percent="38">
+              <svg class="slide-18__donut" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--border)" stroke-width="8"/>
+                <circle class="slide-18__donut-fill" cx="60" cy="60" r="50" fill="none" stroke="var(--accent)" stroke-width="8" stroke-dasharray="119 315" stroke-dashoffset="0" transform="rotate(-90 60 60)" stroke-linecap="round"/>
+              </svg>
+              <span class="slide-18__chart-value">38%</span>
+              <p class="slide-18__chart-label">Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド19: Our Business / 3カラム ========== -->
+  <section class="panel slide-19" data-section="18">
+    <div class="slide-19__layout">
+      <!-- 上部: タイトル -->
+      <div class="slide-19__header">
+        <h2 class="slide-19__title anim-hidden">Our Business</h2>
+        <p class="slide-19__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data.</p>
+      </div>
+
+      <!-- 3カラム -->
+      <div class="slide-19__columns">
+        <!-- 左カラム: アイコン+テキスト -->
+        <div class="slide-19__col">
+          <div class="slide-19__feature anim-hidden">
+            <div class="slide-19__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              </svg>
+            </div>
+            <h3 class="slide-19__feature-name">SHORT TEXT</h3>
+            <p class="slide-19__feature-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+        </div>
+
+        <!-- 中央カラム: 写真1枚 -->
+        <div class="slide-19__photo anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+
+        <!-- 右カラム: アイコン+テキスト -->
+        <div class="slide-19__col">
+          <div class="slide-19__feature anim-hidden">
+            <div class="slide-19__feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                <line x1="4" y1="22" x2="4" y2="15"/>
+              </svg>
+            </div>
+            <h3 class="slide-19__feature-name">SHORT TEXT</h3>
+            <p class="slide-19__feature-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド20: Mockups Slide / スマホモックアップ ========== -->
+  <section class="panel slide-20" data-section="19">
+    <!-- 右上三角装飾 -->
+    <div class="slide-20__triangle"></div>
+
+    <div class="slide-20__layout">
+      <!-- 左: テキスト + 数値 -->
+      <div class="slide-20__left">
+        <div class="slide-20__left-inner">
+          <h2 class="slide-20__title anim-hidden">Mockups<br>Slide</h2>
+          <p class="slide-20__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data.</p>
+          <div class="slide-20__stats anim-hidden">
+            <div class="slide-20__stat">
+              <span class="slide-20__stat-value">1200</span>
+              <span class="slide-20__stat-label">Case studies</span>
+            </div>
+            <div class="slide-20__stat">
+              <span class="slide-20__stat-value">2,400</span>
+              <span class="slide-20__stat-label">Case studies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右: スマホモックアップ（写真プレースホルダー2枚） -->
+      <div class="slide-20__right">
+        <div class="slide-20__phone slide-20__phone--back anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+        <div class="slide-20__phone slide-20__phone--front anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド22: Image Gallery / 写真グリッド ========== -->
+  <section class="panel slide-22" data-section="20">
+    <!-- 右端ブルー装飾帯 -->
+    <div class="slide-22__deco"></div>
+
+    <div class="slide-22__layout">
+      <!-- 左: 写真グリッド（縦長1枚 + 横2枚） -->
+      <div class="slide-22__gallery">
+        <div class="slide-22__photo-tall anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+        <div class="slide-22__photo-stack">
+          <div class="slide-22__photo-small anim-hidden">
+            <div class="placeholder-image placeholder-image--dark">
+              <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+              <span class="placeholder-image__label">NO IMAGE</span>
+            </div>
+          </div>
+          <div class="slide-22__photo-small anim-hidden">
+            <div class="placeholder-image placeholder-image--dark">
+              <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+              <span class="placeholder-image__label">NO IMAGE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右: テキスト -->
+      <div class="slide-22__right">
+        <div class="slide-22__right-inner">
+          <h2 class="slide-22__title anim-hidden">Image Gallery</h2>
+          <p class="slide-22__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data that viewership metrics consistently maintains sound standards.</p>
+          <div class="slide-22__icons anim-hidden">
+            <div class="slide-22__icon-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+              </svg>
+              <span>Gallery</span>
+            </div>
+            <div class="slide-22__icon-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <path d="M21 15l-5-5L5 21"/>
+              </svg>
+              <span>Photos</span>
+            </div>
+            <div class="slide-22__icon-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16v16H4z"/>
+                <path d="M4 12h16M12 4v16"/>
+              </svg>
+              <span>Layout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ナビゲーションドット ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-dot active" data-index="0" data-label="Cover"></div>
+    <div class="nav-dot" data-index="1" data-label="Contents"></div>
+    <div class="nav-dot" data-index="2" data-label="About"></div>
+    <div class="nav-dot" data-index="3" data-label="Welcome"></div>
+    <div class="nav-dot" data-index="4" data-label="Service"></div>
+    <div class="nav-dot" data-index="5" data-label="Team"></div>
+    <div class="nav-dot" data-index="6" data-label="Our Service"></div>
+    <div class="nav-dot" data-index="7" data-label="Business"></div>
+    <div class="nav-dot" data-index="8" data-label="Our Works"></div>
+    <div class="nav-dot" data-index="9" data-label="CEO"></div>
+    <div class="nav-dot" data-index="10" data-label="Gallery"></div>
+    <div class="nav-dot" data-index="11" data-label="Business Table"></div>
+    <div class="nav-dot" data-index="12" data-label="Mockups"></div>
+    <div class="nav-dot" data-index="13" data-label="Workflow"></div>
+    <div class="nav-dot" data-index="14" data-label="Data Analysis"></div>
+    <div class="nav-dot" data-index="15" data-label="Our Business"></div>
+    <div class="nav-dot" data-index="16" data-label="Chart"></div>
+    <div class="nav-dot" data-index="17" data-label="Chart Data"></div>
+    <div class="nav-dot" data-index="18" data-label="Business 2"></div>
+    <div class="nav-dot" data-index="19" data-label="Mockups 2"></div>
+    <div class="nav-dot" data-index="20" data-label="Gallery 2"></div>
+  </nav>
+
+  <!-- ========== セクションカウンター ========== -->
+  <div class="section-counter" id="sectionCounter">
+    <span class="section-counter__current">01</span>
+    <span class="section-counter__sep"> / </span>
+    <span class="section-counter__total">21</span>
+  </div>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- アプリケーションJS -->
+  <script src="js/section-animations.js"></script>
+  <script src="js/scroll-controller.js"></script>
+</body>
+</html>
