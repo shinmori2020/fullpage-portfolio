@@ -52,6 +52,9 @@
       case 20: slide22Anim(p); break;
       case 21: slide23Anim(p); break;
       case 22: slide24Anim(p); break;
+      case 23: slide25Anim(p); break;
+      case 24: slide26Anim(p); break;
+      case 25: slide1Anim(p); break;
       // 新しいスライドはここに追加
     }
   }
@@ -145,6 +148,58 @@
       gsap.set(photo, { x: 60 });
       tl.to(photo, { opacity: 1, x: 0, duration: 0.85, ease: "power3.out" }, "-=0.6");
     }
+  }
+
+  /* ---------- スライド26: Analysis Slide / 大型数値データ ---------- */
+  function slide26Anim(p) {
+    var tl = gsap.timeline();
+    var title  = p.querySelector(".slide-26__title");
+    var desc   = p.querySelector(".slide-26__desc");
+    var center = p.querySelector(".slide-26__center");
+    var infos  = p.querySelectorAll(".slide-26__info");
+
+    if (title) {
+      gsap.set(title, { y: 25 });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" });
+    }
+    if (desc) {
+      gsap.set(desc, { y: 20 });
+      tl.to(desc, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4");
+    }
+    if (center) {
+      gsap.set(center, { y: 30 });
+      tl.to(center, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.4");
+    }
+    infos.forEach(function (info) {
+      gsap.set(info, { x: 30 });
+      tl.to(info, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, "-=0.35");
+    });
+  }
+
+  /* ---------- スライド25: Analysis Slide / 横棒グラフ ---------- */
+  function slide25Anim(p) {
+    var tl = gsap.timeline();
+    var photo = p.querySelector(".slide-25__left-photo");
+    var title = p.querySelector(".slide-25__title");
+    var desc  = p.querySelector(".slide-25__desc");
+    var bars  = p.querySelectorAll(".slide-25__bar-item");
+
+    if (photo) {
+      gsap.set(photo, { x: -60 });
+      tl.to(photo, { opacity: 1, x: 0, duration: 0.85, ease: "power3.out" });
+    }
+    if (title) {
+      gsap.set(title, { y: 25 });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5");
+    }
+    if (desc) {
+      gsap.set(desc, { y: 20 });
+      tl.to(desc, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.35");
+    }
+    bars.forEach(function (bar) {
+      gsap.set(bar, { x: 30 });
+      tl.to(bar, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, "-=0.3");
+    });
   }
 
   /* ---------- スライド24: ステップ / 番号付きリスト ---------- */

@@ -28,6 +28,10 @@
 }
 
 /* ---------- 基本設定 ---------- */
+html {
+  font-size: 16px;
+}
+
 html, body {
   overflow: hidden;
   height: 100vh;
@@ -37,6 +41,19 @@ html, body {
   background: var(--bg-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- レスポンシブ ベースフォント ---------- */
+@media (max-width: 1024px) {
+  html { font-size: 15px; }
+}
+
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 12px; }
 }
 
 /* ---------- パネル共通 ---------- */

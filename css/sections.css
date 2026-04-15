@@ -296,41 +296,7 @@
   width: 100%;
 }
 
-/* ---- スライド2 レスポンシブ ---- */
-@media (max-width: 768px) {
-  .slide-2__left {
-    display: none;
-  }
-
-  .slide-2__center {
-    left: 0;
-    width: 100%;
-    height: 14%;
-    top: 0;
-  }
-
-  .slide-2__title {
-    writing-mode: horizontal-tb;
-    font-size: clamp(28px, 6vw, 40px);
-    letter-spacing: 0.15em;
-  }
-
-  .slide-2__right {
-    width: 100%;
-    top: 14%;
-    height: 86%;
-    padding: 24px;
-    align-items: flex-start;
-  }
-
-  .slide-2__item {
-    padding: 16px 0;
-  }
-
-  .slide-2__label {
-    font-size: 18px;
-  }
-}
+/* ---- スライド2 レスポンシブ → sections-responsive.css に移動 ---- */
 
 /* ----------------------------------------
    スライド3: パート区切り + About導入
@@ -475,35 +441,7 @@
   color: rgba(0, 0, 0, 0.15);
 }
 
-/* ---- スライド3 レスポンシブ ---- */
-@media (max-width: 768px) {
-  .slide-3__layout {
-    flex-direction: column;
-  }
-
-  .slide-3__left {
-    width: 100%;
-    height: 10%;
-  }
-
-  .slide-3__part {
-    writing-mode: horizontal-tb;
-    font-size: 20px;
-    letter-spacing: 0.15em;
-  }
-
-  .slide-3__right {
-    display: none;
-  }
-
-  .slide-3__center {
-    padding: 32px 24px;
-  }
-
-  .slide-3__title {
-    font-size: 32px;
-  }
-}
+/* ---- スライド3 レスポンシブ → sections-responsive.css に移動 ---- */
 
 /* ----------------------------------------
    スライド4: Welcome / 左画像+右テキスト
@@ -594,39 +532,7 @@
   margin-bottom: 0;
 }
 
-/* ---- スライド4 レスポンシブ ---- */
-@media (max-width: 768px) {
-  .slide-4__left {
-    position: relative;
-    left: auto;
-    top: auto;
-    bottom: auto;
-    width: 100%;
-    height: 40%;
-  }
-
-  .slide-4__layout {
-    flex-direction: column;
-  }
-
-  .slide-4__right {
-    position: relative;
-    left: auto;
-    right: auto;
-    height: auto;
-    flex: 1;
-    padding: 32px 24px;
-  }
-
-  .slide-4__deco {
-    display: none;
-  }
-
-  .slide-4__title {
-    font-size: 36px;
-    margin-bottom: 24px;
-  }
-}
+/* ---- スライド4 レスポンシブ → sections-responsive.css に移動 ---- */
 
 /* ----------------------------------------
    スライド5: サービス紹介 / 左リスト+右3分割写真
@@ -775,31 +681,7 @@
   left: 66.66%;
 }
 
-/* ---- スライド5 レスポンシブ ---- */
-@media (max-width: 768px) {
-  .slide-5__layout {
-    flex-direction: column;
-  }
-
-  .slide-5__left {
-    width: 100%;
-    padding: 32px 24px;
-    gap: 28px;
-  }
-
-  .slide-5__right {
-    width: 100%;
-    padding: 0 24px 32px;
-  }
-
-  .slide-5__photo {
-    height: 200px;
-  }
-
-  .slide-5__name {
-    font-size: 17px;
-  }
-}
+/* ---- スライド5 レスポンシブ → sections-responsive.css に移動 ---- */
 
 /* ----------------------------------------
    スライド6: チームメンバー紹介（横3列カード）
@@ -913,37 +795,7 @@
   letter-spacing: 0.05em;
 }
 
-/* ---- スライド6 レスポンシブ ---- */
-@media (max-width: 768px) {
-  .slide-6__cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 0 24px;
-    top: 18%;
-    overflow-y: auto;
-  }
-
-  .slide-6__card {
-    flex-direction: row;
-    max-width: 100%;
-  }
-
-  .slide-6__photo {
-    width: 100px;
-    aspect-ratio: 1 / 1;
-    flex-shrink: 0;
-  }
-
-  .slide-6__info {
-    text-align: left;
-    align-items: flex-start;
-  }
-
-  .slide-6__title {
-    font-size: 28px;
-  }
-}
+/* ---- スライド6 レスポンシブ → sections-responsive.css に移動 ---- */
 
 /* ----------------------------------------
    スライド7: Our Service / サービス紹介
@@ -1068,35 +920,70 @@
 }
 
 /* ---- スライド7 レスポンシブ ---- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .slide-7 {
+    flex-direction: column;
+  }
+
   .slide-7__left {
+    position: relative;
     width: 100%;
     height: 8%;
+    inset: auto;
+    order: 1;
   }
 
   .slide-7__part {
     writing-mode: horizontal-tb;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 0.1em;
   }
 
   .slide-7__main {
-    left: 0;
-    top: 8%;
-    height: 92%;
+    position: relative;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    inset: auto;
+    width: 100%;
+    flex: 1;
+    order: 2;
   }
 
   .slide-7__photo {
-    height: 40%;
-    margin: 2% 4% 0;
-    width: calc(100% - 8%);
+    height: 30%;
+    margin: 0;
+    width: 100%;
   }
 
   .slide-7__services {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 16px;
-    margin-top: -24px;
+    margin-top: 32px;
+    padding: 0 40px;
+  }
+
+  .slide-7__service {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .slide-7__icon {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+  }
+
+  .slide-7__name {
+    font-size: 18px;
+  }
+
+  .slide-7__desc {
+    font-size: 13px;
   }
 }
 
@@ -1241,31 +1128,68 @@
 }
 
 /* ---- スライド8 レスポンシブ ---- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .slide-8__layout {
     flex-direction: column;
   }
 
   .slide-8__left {
     width: 100%;
-    padding: 32px 24px;
+    padding: 24px 40px;
+    order: 2;
+  }
+
+  .slide-8__text {
+    margin-bottom: 24px;
   }
 
   .slide-8__right {
+    position: relative;
+    right: auto;
     width: 100%;
-    padding: 32px 24px;
+    height: auto;
+    padding: 24px 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    order: 1;
   }
 
   .slide-8__photo {
-    width: 50%;
+    width: 30%;
+    max-width: 120px;
+    aspect-ratio: 1 / 1;
+    box-shadow: none;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .slide-8__name {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .slide-8__person-desc {
+    text-align: center;
+    font-size: 13px;
   }
 
   .slide-8__stats {
     gap: 24px;
   }
 
+  .slide-8__stat-icon {
+    width: 56px;
+    height: 56px;
+    padding: 14px;
+  }
+
+  .slide-8__stat-value {
+    font-size: 22px;
+  }
+
   .slide-8__title {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
@@ -1412,46 +1336,41 @@
 }
 
 /* ---- スライド9 レスポンシブ ---- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .slide-9__layout {
     flex-direction: column;
   }
 
   .slide-9__left {
     width: 100%;
-    height: 10%;
-  }
-
-  .slide-9__bars {
-    height: 100%;
-    flex-direction: row;
-  }
-
-  .slide-9__bar-thick {
-    width: 100%;
-    height: 48px;
-  }
-
-  .slide-9__bar-thin {
-    display: none;
+    height: 8%;
+    order: 1;
   }
 
   .slide-9__part {
     writing-mode: horizontal-tb;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 0.15em;
   }
 
-  .slide-9__right {
-    display: none;
+  .slide-9__center {
+    padding: 32px 40px;
+    order: 2;
+    flex: 1;
   }
 
-  .slide-9__center {
-    padding: 32px 24px;
+  .slide-9__center-inner {
+    max-width: 100%;
   }
 
   .slide-9__title {
     font-size: 32px;
+  }
+
+  .slide-9__right {
+    width: 100%;
+    height: 30%;
+    order: 3;
   }
 }
 
@@ -1599,30 +1518,72 @@
 }
 
 /* ---- スライド10 レスポンシブ ---- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .slide-10__layout {
     flex-direction: column;
   }
 
+  .slide-10__deco {
+    position: relative;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    inset: auto;
+    width: 100%;
+    height: 8%;
+    order: 1;
+  }
+
   .slide-10__left {
     width: 100%;
-    padding: 32px 24px;
+    padding: 24px 40px;
+    order: 3;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slide-10__left-inner {
+    max-width: 100%;
+  }
+
+  .slide-10__features {
+    justify-content: center;
   }
 
   .slide-10__right {
-    display: none;
+    position: relative;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    inset: auto;
+    width: 100%;
+    height: 35%;
+    order: 2;
+    z-index: 1;
   }
 
-  .slide-10__deco {
-    display: none;
+  .slide-10__photo {
+    width: 100%;
+    height: 100%;
   }
 
   .slide-10__title {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .slide-10__desc {
+    margin-bottom: 24px;
   }
 
   .slide-10__features {
     gap: 24px;
+  }
+
+  .slide-10__feature-icon {
+    width: 56px;
+    height: 56px;
+    padding: 14px;
   }
 }
 
@@ -1770,23 +1731,49 @@
 }
 
 /* ---- スライド11 レスポンシブ ---- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .slide-11__layout {
     flex-direction: column;
   }
 
   .slide-11__left {
     width: 100%;
-    height: 40%;
+    padding: 40px 40px 16px;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slide-11__left {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .slide-11__photo-back,
+  .slide-11__photo-front {
+    width: 70%;
+    transform: none;
+    aspect-ratio: 4 / 3;
   }
 
   .slide-11__right {
     width: 100%;
-    padding: 32px 24px;
+    padding: 8px 40px 24px;
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .slide-11__right-inner {
+    max-width: 100%;
   }
 
   .slide-11__title {
-    font-size: 32px;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .slide-11__desc {
+    margin-bottom: 20px;
   }
 }
 
@@ -3427,5 +3414,284 @@
 
   .slide-24__step-title {
     font-size: 17px;
+  }
+}
+
+/* ----------------------------------------
+   スライド25: Analysis Slide / 横棒グラフ
+   ---------------------------------------- */
+.slide-25 {
+  background: var(--bg-white);
+}
+
+.slide-25__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: 写真+ブルーオーバーレイ ---- */
+.slide-25__left {
+  width: 50%;
+  height: 100%;
+  background: rgba(44, 95, 204, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-25__left-photo {
+  width: 75%;
+  height: 70%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-25__left-photo .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-25__left-photo .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-25__left-photo .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- 右: テキスト+横棒グラフ ---- */
+.slide-25__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.slide-25__right-inner {
+  max-width: 480px;
+  width: 100%;
+}
+
+.slide-25__title {
+  font-family: var(--font-en);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.slide-25__desc {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* 横棒グラフ */
+.slide-25__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slide-25__bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slide-25__bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide-25__bar-label {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.slide-25__bar-value {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.slide-25__bar-track {
+  width: 100%;
+  height: 10px;
+  background: var(--bg-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.slide-25__bar-fill {
+  width: var(--bar-width);
+  height: 100%;
+  background: var(--text-dark);
+  border-radius: 5px;
+}
+
+/* ---- スライド25 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-25__layout {
+    flex-direction: column;
+  }
+
+  .slide-25__left {
+    width: 100%;
+    height: 35%;
+  }
+
+  .slide-25__right {
+    padding: 32px 24px;
+  }
+
+  .slide-25__title {
+    font-size: 32px;
+  }
+}
+
+/* ----------------------------------------
+   スライド26: Analysis Slide / 大型数値データ
+   ---------------------------------------- */
+.slide-26 {
+  background: var(--bg-white);
+}
+
+.slide-26__layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- 左: テキスト（白背景） ---- */
+.slide-26__left {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.slide-26__left-inner {
+  width: 100%;
+}
+
+.slide-26__title {
+  font-family: var(--font-en);
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.slide-26__desc {
+  font-family: var(--font-en);
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ---- 中央: 写真 ---- */
+.slide-26__center {
+  width: 33.33%;
+  height: 100%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slide-26__center .placeholder-image--dark {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.slide-26__center .placeholder-image--dark .placeholder-image__icon {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+.slide-26__center .placeholder-image--dark .placeholder-image__label {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+/* ---- 右: ブルー背景+大型数値 ---- */
+.slide-26__right {
+  width: 33.33%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px;
+}
+
+.slide-26__right-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+
+.slide-26__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slide-26__info-title {
+  font-family: var(--font-en);
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.slide-26__info-desc {
+  font-family: var(--font-en);
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+}
+
+/* ---- スライド26 レスポンシブ ---- */
+@media (max-width: 768px) {
+  .slide-26__layout {
+    flex-direction: column;
+  }
+
+  .slide-26__left {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .slide-26__center {
+    display: none;
+  }
+
+  .slide-26__right {
+    padding: 32px 24px;
+  }
+
+  .slide-26__data-value {
+    font-size: 48px;
+  }
+
+  .slide-26__title {
+    font-size: 32px;
   }
 }

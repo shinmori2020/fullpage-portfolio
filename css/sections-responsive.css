@@ -1,0 +1,686 @@
+/* ========================================
+   sections-responsive.css — レスポンシブ専用
+   ブレイクポイント: 1024px / 768px / 480px
+   ======================================== */
+
+/* ========================================
+   ユーティリティクラス
+   ======================================== */
+
+/* --- タブレット（1024px以下） --- */
+@media (max-width: 1024px) {
+  .tab-hide { display: none !important; }
+}
+
+/* --- SP（768px以下） --- */
+@media (max-width: 768px) {
+  .sp-hide { display: none !important; }
+
+  .sp-bg-image {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  .sp-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .sp-text-white { color: #ffffff !important; }
+  .sp-text-white-muted { color: rgba(255, 255, 255, 0.7) !important; }
+  .sp-z-front { position: relative; z-index: 2; }
+}
+
+/* --- 小型SP（480px以下） --- */
+@media (max-width: 480px) {
+  .xs-hide { display: none !important; }
+}
+
+/* ========================================
+   コンポーネント レスポンシブ
+   ======================================== */
+
+/* --- ナビドット: 768px以下で非表示 --- */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* --- プログレスバー: 768px以下で非表示 --- */
+@media (max-width: 768px) {
+  .progress-bar {
+    display: none;
+  }
+}
+
+/* --- プレースホルダー: SP縮小 --- */
+@media (max-width: 768px) {
+  .placeholder-image {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .placeholder-image__icon {
+    width: 36px;
+    height: 24px;
+  }
+
+  .placeholder-image__label {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .placeholder-image {
+    padding: 8px 14px;
+    gap: 4px;
+  }
+
+  .placeholder-image__icon {
+    width: 24px;
+    height: 16px;
+  }
+
+  .placeholder-image__label {
+    font-size: 7px;
+  }
+}
+
+/* --- セクションカウンター: SP調整 --- */
+@media (max-width: 768px) {
+  .section-counter {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+  }
+}
+
+/* ========================================
+   スライド別 レスポンシブ
+   ======================================== */
+
+/* ----------------------------------------
+   スライド1: Cover / Hero
+   ---------------------------------------- */
+/* シンプルなので調整不要 */
+
+/* ----------------------------------------
+   スライド1: Cover / Hero
+   ---------------------------------------- */
+@media (max-width: 768px) {
+  .slide-1 .placeholder-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ----------------------------------------
+   スライド2: Contents
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-2__left {
+    display: none;
+  }
+
+  .slide-2__center {
+    left: 0;
+    width: 25%;
+  }
+
+  .slide-2__right {
+    width: 75%;
+    right: 0;
+  }
+
+  .slide-2__title {
+    font-size: clamp(28px, 3.5vw, 48px);
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .slide-2 {
+    background: var(--bg-light);
+  }
+
+  .slide-2__layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide-2__center {
+    display: flex !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 10%;
+    z-index: auto;
+    order: 1;
+  }
+
+  .slide-2__title {
+    writing-mode: horizontal-tb;
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+  }
+
+  .slide-2__left {
+    display: block !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 45%;
+    z-index: auto;
+    order: 2;
+  }
+
+  .slide-2__photo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-2__right {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto;
+    flex: 1;
+    padding: 1.5rem 2rem;
+    align-items: flex-start;
+    order: 3;
+  }
+
+  .slide-2__item {
+    padding: 0.75rem 0;
+  }
+
+  .slide-2__label {
+    font-size: 1.5rem;
+  }
+
+  .slide-2__icon {
+    font-size: 1.25rem;
+  }
+
+  .slide-2__desc {
+    font-size: 0.9rem;
+  }
+
+  .slide-2__separator {
+    margin: 0;
+  }
+}
+
+/* --- 小型SP（480px） --- */
+@media (max-width: 480px) {
+  .slide-2__left {
+    height: 25%;
+  }
+
+  .slide-2__item {
+    padding: 0.5rem 0;
+  }
+
+  .slide-2__label {
+    font-size: 1.3rem;
+  }
+
+  .slide-2__desc {
+    font-size: 0.75rem;
+  }
+
+  .slide-2__right {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* ----------------------------------------
+   スライド3: Part One + About Us
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-3__left {
+    width: 8%;
+  }
+
+  .slide-3__right {
+    width: 32%;
+  }
+
+  .slide-3__title {
+    font-size: clamp(32px, 4vw, 48px);
+  }
+
+  .slide-3__desc {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .slide-3__layout {
+    flex-direction: column;
+  }
+
+  .slide-3__left {
+    width: 100% !important;
+    height: 8%;
+    order: 1;
+  }
+
+  .slide-3__part {
+    writing-mode: horizontal-tb;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .slide-3__center {
+    padding: 3rem 2rem 2rem;
+    order: 2;
+    flex: none;
+  }
+
+  .slide-3__center-inner {
+    max-width: 100%;
+  }
+
+  .slide-3__heading {
+    margin-bottom: 1rem;
+  }
+
+  .slide-3__icon {
+    font-size: 1.5rem;
+  }
+
+  .slide-3__title {
+    font-size: 1.75rem;
+  }
+
+  .slide-3__desc {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .slide-3__btn-text {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .slide-3__btn-arrow {
+    width: 2.2rem;
+    height: 2.1rem;
+    font-size: 0.85rem;
+  }
+
+  .slide-3__right {
+    width: 100% !important;
+    height: 50%;
+    flex: none;
+    order: 3;
+  }
+}
+
+/* --- 小型SP（480px） --- */
+@media (max-width: 480px) {
+  .slide-3__desc {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-3__title {
+    font-size: 1.5rem;
+  }
+
+  .slide-3__right {
+    height: 50%;
+  }
+
+  .slide-3__center {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+}
+
+/* ----------------------------------------
+   スライド4: Welcome
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-4__deco {
+    display: none;
+  }
+
+  .slide-4__right {
+    right: 0;
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .slide-4__layout {
+    flex-direction: column;
+  }
+
+  .slide-4__left {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 45%;
+    order: 1;
+  }
+
+  .slide-4__right {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto;
+    flex: 1;
+    padding: 1.5rem 2rem;
+    order: 2;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .slide-4__right-inner {
+    max-width: 100%;
+  }
+
+  .slide-4__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .slide-4__desc {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* --- 小型SP（480px） --- */
+@media (max-width: 480px) {
+  .slide-4__left {
+    height: 40%;
+  }
+
+  .slide-4__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-4__desc {
+    font-size: 0.8rem;
+  }
+}
+
+/* ----------------------------------------
+   スライド5: サービス紹介
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-5__deco {
+    display: none;
+  }
+
+  .slide-5__left {
+    left: 4% !important;
+    width: 38% !important;
+  }
+
+  .slide-5__right {
+    width: 52% !important;
+    padding: 0 32px 0 0 !important;
+  }
+
+  .slide-5__name {
+    font-size: 22px;
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .slide-5__layout {
+    flex-direction: column;
+  }
+
+  .slide-5__deco {
+    display: none !important;
+  }
+
+  .slide-5__right {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 50%;
+    padding: 0 !important;
+    order: 1;
+  }
+
+  .slide-5__photo {
+    height: 100%;
+  }
+
+  .slide-5__left {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    inset: auto !important;
+    width: 100% !important;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    order: 2;
+  }
+
+  .slide-5__item {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .slide-5__icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .slide-5__name {
+    font-size: 1.1rem;
+  }
+
+  .slide-5__desc {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- 小型SP（480px） --- */
+@media (max-width: 480px) {
+  .slide-5__right {
+    height: 35%;
+  }
+
+  .slide-5__left {
+    padding: 1rem 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .slide-5__name {
+    font-size: 1rem;
+  }
+
+  .slide-5__desc {
+    font-size: 0.7rem;
+  }
+}
+
+/* ----------------------------------------
+   スライド6: Our Team Members
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-6__cards {
+    gap: 20px;
+    padding: 0 40px;
+  }
+
+  .slide-6__card {
+    max-width: 280px;
+  }
+
+  .slide-6__name {
+    font-size: 22px;
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .panel.slide-6 {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .panel.slide-6 > .slide-6__bg {
+    display: none !important;
+  }
+
+  .panel.slide-6 > .slide-6__title {
+    position: static !important;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    background: var(--accent);
+    padding: 1.5rem 0;
+  }
+
+  .panel.slide-6 > .slide-6__cards {
+    position: static !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 2rem;
+  }
+
+  .slide-6__card {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  .slide-6__photo {
+    width: 160px;
+    min-width: 160px;
+    height: 160px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+
+  .slide-6__info {
+    text-align: left;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    gap: 4px;
+  }
+
+  .slide-6__name {
+    font-size: 1.1rem;
+  }
+
+  .slide-6__desc {
+    font-size: 0.8rem;
+  }
+
+  .slide-6__role {
+    font-size: 0.75rem;
+  }
+}
+
+/* --- 小型SP（480px） --- */
+@media (max-width: 480px) {
+  .panel.slide-6 > .slide-6__title {
+    font-size: 1.25rem;
+  }
+
+  .panel.slide-6 > .slide-6__cards {
+    padding: 0.5rem 1.5rem;
+    gap: 10px;
+  }
+
+  .panel.slide-6 > .slide-6__cards {
+    gap: 20px;
+    padding: 1.5rem 1.5rem;
+  }
+
+  .slide-6__card {
+    max-width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slide-6__photo {
+  }
+
+  .slide-6__info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .slide-6__name {
+    font-size: 1rem;
+  }
+
+  .slide-6__desc {
+    font-size: 0.75rem;
+  }
+}

@@ -120,7 +120,8 @@
   window.addEventListener("touchend", function (e) {
     if (isAnimating) return;
     const diff = touchStartY - e.changedTouches[0].clientY;
-    if (Math.abs(diff) > 50) {
+    var threshold = window.innerWidth <= 768 ? 80 : 50;
+    if (Math.abs(diff) > threshold) {
       goTo(current + (diff > 0 ? 1 : -1));
     }
   }, { passive: true });

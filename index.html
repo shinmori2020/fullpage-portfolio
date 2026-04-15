@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/sections-responsive.css">
 </head>
 <body>
 
@@ -43,7 +44,7 @@
       <span></span>
     </div>
 
-    <!-- コンテンツ（左下寄せ） -->
+    <!-- コンテンツ（中央揃え） -->
     <div class="slide-1__content">
       <h1 class="slide-1__title anim-hidden">REPORT</h1>
       <p class="slide-1__subtitle anim-hidden">BUSINESS PRESENTATION TEMPLATE</p>
@@ -166,9 +167,9 @@
 
   <!-- ========== スライド5: サービス紹介 / 左リスト+右3分割写真 ========== -->
   <section class="panel slide-5" data-section="4">
-    <!-- 左端ブルー装飾帯 -->
-    <div class="slide-5__deco"></div>
     <div class="slide-5__layout">
+      <!-- 左端ブルー装飾帯 -->
+      <div class="slide-5__deco"></div>
       <!-- 左: サービスリスト -->
       <div class="slide-5__left">
         <div class="slide-5__item anim-hidden">
@@ -425,10 +426,9 @@
 
   <!-- ========== スライド10: About Our CEO / 人物紹介 ========== -->
   <section class="panel slide-10" data-section="9">
-    <!-- 右端ブルー装飾帯 -->
-    <div class="slide-10__deco"></div>
-
     <div class="slide-10__layout">
+      <!-- ブルー装飾帯 -->
+      <div class="slide-10__deco"></div>
       <!-- 左側: テキスト + アイコン -->
       <div class="slide-10__left">
         <div class="slide-10__left-inner">
@@ -1070,6 +1070,110 @@
     </div>
   </section>
 
+  <!-- ========== スライド25: Analysis Slide / 横棒グラフ ========== -->
+  <section class="panel slide-25" data-section="23">
+    <div class="slide-25__layout">
+      <!-- 左: 写真+ブルーオーバーレイ -->
+      <div class="slide-25__left">
+        <div class="slide-25__left-photo anim-hidden">
+          <div class="placeholder-image placeholder-image--dark">
+            <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+            <span class="placeholder-image__label">NO IMAGE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右: テキスト+横棒グラフ -->
+      <div class="slide-25__right">
+        <div class="slide-25__right-inner">
+          <h2 class="slide-25__title anim-hidden">Analysis<br>Slide</h2>
+          <p class="slide-25__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data.</p>
+          <div class="slide-25__bars">
+            <div class="slide-25__bar-item anim-hidden">
+              <div class="slide-25__bar-header">
+                <span class="slide-25__bar-label">Marketing</span>
+                <span class="slide-25__bar-value">89%</span>
+              </div>
+              <div class="slide-25__bar-track">
+                <div class="slide-25__bar-fill" style="--bar-width: 89%"></div>
+              </div>
+            </div>
+            <div class="slide-25__bar-item anim-hidden">
+              <div class="slide-25__bar-header">
+                <span class="slide-25__bar-label">Strategy</span>
+                <span class="slide-25__bar-value">92%</span>
+              </div>
+              <div class="slide-25__bar-track">
+                <div class="slide-25__bar-fill" style="--bar-width: 92%"></div>
+              </div>
+            </div>
+            <div class="slide-25__bar-item anim-hidden">
+              <div class="slide-25__bar-header">
+                <span class="slide-25__bar-label">Projects</span>
+                <span class="slide-25__bar-value">75%</span>
+              </div>
+              <div class="slide-25__bar-track">
+                <div class="slide-25__bar-fill" style="--bar-width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド26: Analysis Slide / 大型数値データ ========== -->
+  <section class="panel slide-26" data-section="24">
+    <div class="slide-26__layout">
+      <!-- 左: テキスト（白背景） -->
+      <div class="slide-26__left">
+        <div class="slide-26__left-inner">
+          <h2 class="slide-26__title anim-hidden">Analysis<br>Slide</h2>
+          <p class="slide-26__desc anim-hidden">Sometimes, the use of television enables greater flexibility for viewers in terms of modifying the transmission. It has been demonstrated through our data.</p>
+        </div>
+      </div>
+
+      <!-- 中央: 写真 -->
+      <div class="slide-26__center anim-hidden">
+        <div class="placeholder-image placeholder-image--dark">
+          <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+          <span class="placeholder-image__label">NO IMAGE</span>
+        </div>
+      </div>
+
+      <!-- 右: ブルー背景+情報リスト -->
+      <div class="slide-26__right">
+        <div class="slide-26__right-inner">
+          <div class="slide-26__info anim-hidden">
+            <h3 class="slide-26__info-title">Our Mission</h3>
+            <p class="slide-26__info-desc">We strive to deliver innovative solutions that transform businesses and create lasting value for our clients and partners.</p>
+          </div>
+          <div class="slide-26__info anim-hidden">
+            <h3 class="slide-26__info-title">Our Vision</h3>
+            <p class="slide-26__info-desc">To become the leading creative agency recognized for excellence in strategy, design, and measurable business outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スライド27: Thanks / エンディング ========== -->
+  <section class="panel slide-27" data-section="25">
+    <!-- 背景プレースホルダー -->
+    <div class="slide-1__bg">
+      <div class="placeholder-image">
+        <svg class="placeholder-image__icon"><use href="#icon-placeholder"/></svg>
+        <span class="placeholder-image__label">NO IMAGE</span>
+      </div>
+    </div>
+
+    <!-- コンテンツ（中央揃え） -->
+    <div class="slide-1__content">
+      <h1 class="slide-1__title anim-hidden">THANKS</h1>
+      <p class="slide-1__subtitle anim-hidden">BUSINESS PRESENTATION TEMPLATE</p>
+    </div>
+  </section>
+
   <!-- ========== ナビゲーションドット ========== -->
   <nav class="nav" id="nav">
     <div class="nav-dot active" data-index="0" data-label="Cover"></div>
@@ -1095,13 +1199,16 @@
     <div class="nav-dot" data-index="20" data-label="Gallery 2"></div>
     <div class="nav-dot" data-index="21" data-label="Analysis"></div>
     <div class="nav-dot" data-index="22" data-label="Steps"></div>
+    <div class="nav-dot" data-index="23" data-label="Analysis 2"></div>
+    <div class="nav-dot" data-index="24" data-label="Data"></div>
+    <div class="nav-dot" data-index="25" data-label="Thanks"></div>
   </nav>
 
   <!-- ========== セクションカウンター ========== -->
   <div class="section-counter" id="sectionCounter">
     <span class="section-counter__current">01</span>
     <span class="section-counter__sep"> / </span>
-    <span class="section-counter__total">23</span>
+    <span class="section-counter__total">26</span>
   </div>
 
   <!-- GSAP -->
