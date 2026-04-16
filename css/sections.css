@@ -919,73 +919,7 @@
   line-height: 1.6;
 }
 
-/* ---- スライド7 レスポンシブ ---- */
-@media (max-width: 900px) {
-  .slide-7 {
-    flex-direction: column;
-  }
-
-  .slide-7__left {
-    position: relative;
-    width: 100%;
-    height: 8%;
-    inset: auto;
-    order: 1;
-  }
-
-  .slide-7__part {
-    writing-mode: horizontal-tb;
-    font-size: 18px;
-    letter-spacing: 0.1em;
-  }
-
-  .slide-7__main {
-    position: relative;
-    left: auto;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    inset: auto;
-    width: 100%;
-    flex: 1;
-    order: 2;
-  }
-
-  .slide-7__photo {
-    height: 30%;
-    margin: 0;
-    width: 100%;
-  }
-
-  .slide-7__services {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    margin-top: 32px;
-    padding: 0 40px;
-  }
-
-  .slide-7__service {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .slide-7__icon {
-    width: 48px;
-    height: 48px;
-    padding: 12px;
-  }
-
-  .slide-7__name {
-    font-size: 18px;
-  }
-
-  .slide-7__desc {
-    font-size: 13px;
-  }
-}
+/* ---- スライド7 レスポンシブ → sections-responsive.css に移動 ---- */
 
 /* ----------------------------------------
    スライド8: Business Slide / テキスト+アイコン数値
@@ -1128,7 +1062,7 @@
 }
 
 /* ---- スライド8 レスポンシブ ---- */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .slide-8__layout {
     flex-direction: column;
   }
@@ -1335,44 +1269,29 @@
   color: rgba(0, 0, 0, 0.15);
 }
 
-/* ---- スライド9 レスポンシブ ---- */
-@media (max-width: 900px) {
-  .slide-9__layout {
-    flex-direction: column;
-  }
+/* ---- スライド9 レスポンシブ → sections-responsive.css に移動 ---- */
 
-  .slide-9__left {
-    width: 100%;
-    height: 8%;
-    order: 1;
-  }
-
-  .slide-9__part {
-    writing-mode: horizontal-tb;
-    font-size: 18px;
-    letter-spacing: 0.15em;
-  }
-
-  .slide-9__center {
-    padding: 32px 40px;
-    order: 2;
-    flex: 1;
-  }
-
-  .slide-9__center-inner {
-    max-width: 100%;
-  }
-
-  .slide-9__title {
-    font-size: 32px;
-  }
-
-  .slide-9__right {
-    width: 100%;
-    height: 30%;
-    order: 3;
-  }
-}
+/* ----------------------------------------
+   スライド15: パート区切り（PART THREE）+ Data Analysis
+   ---------------------------------------- */
+.slide-15__layout { display: flex; width: 100%; height: 100%; }
+.slide-15__left { width: 10%; height: 100%; background: var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.slide-15__part { font-family: var(--font-en); font-size: clamp(20px, 2.5vw, 32px); font-weight: 600; color: #ffffff; writing-mode: vertical-lr; letter-spacing: 0.25em; text-transform: uppercase; }
+.slide-15__center { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 56px; }
+.slide-15__center-inner { max-width: 520px; }
+.slide-15__heading { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.slide-15__icon { color: var(--accent); font-size: 40px; line-height: 1; }
+.slide-15__title { font-family: var(--font-en); font-size: clamp(42px, 5vw, 64px); font-weight: 700; color: var(--text-dark); line-height: 1.15; }
+.slide-15__desc { font-family: var(--font-en); font-size: 16px; font-weight: 300; color: var(--text-muted); line-height: 1.8; margin-bottom: 44px; }
+.slide-15__btn { display: inline-flex; align-items: center; text-decoration: none; overflow: hidden; }
+.slide-15__btn-text { font-family: var(--font-en); font-size: 16px; font-weight: 600; color: var(--text-dark); letter-spacing: 0.12em; padding: 16px 32px; border: 2px solid var(--border); border-right: none; }
+.slide-15__btn-arrow { display: flex; align-items: center; justify-content: center; width: 56px; height: 54px; background: var(--accent); color: #ffffff; font-size: 20px; border: 2px solid var(--accent); }
+.slide-15__btn:hover .slide-15__btn-text { background: var(--accent-light); }
+.slide-15__btn:hover .slide-15__btn-arrow { background: var(--accent-hover); border-color: var(--accent-hover); }
+.slide-15__right { width: 38%; height: 100%; background: var(--bg-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.slide-15__right .placeholder-image--dark { border-color: rgba(0, 0, 0, 0.1); }
+.slide-15__right .placeholder-image--dark .placeholder-image__icon { color: rgba(0, 0, 0, 0.12); }
+.slide-15__right .placeholder-image--dark .placeholder-image__label { color: rgba(0, 0, 0, 0.15); }
 
 /* ----------------------------------------
    スライド10: About Our CEO / 人物紹介
@@ -1518,7 +1437,7 @@
 }
 
 /* ---- スライド10 レスポンシブ ---- */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .slide-10__layout {
     flex-direction: column;
   }
@@ -1570,6 +1489,10 @@
 
   .slide-10__title {
     font-size: 28px;
+  }
+
+  .slide-10__title br {
+    display: none;
   }
 
   .slide-10__desc {
@@ -1731,34 +1654,44 @@
 }
 
 /* ---- スライド11 レスポンシブ ---- */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .slide-11__layout {
     flex-direction: column;
   }
 
   .slide-11__left {
     width: 100%;
-    padding: 40px 40px 16px;
+    height: 35%;
+    padding: 1rem 2rem;
+    flex-direction: row;
     justify-content: center;
-    overflow: hidden;
-  }
-
-  .slide-11__left {
-    flex-direction: column;
     gap: 12px;
-    align-items: center;
   }
 
   .slide-11__photo-back,
   .slide-11__photo-front {
-    width: 70%;
+    width: 45%;
+    height: 100%;
     transform: none;
-    aspect-ratio: 4 / 3;
+  }
+
+  @media (max-width: 768px) {
+    .slide-11__left {
+      flex-direction: column;
+      align-items: center;
+      height: 40%;
+    }
+
+    .slide-11__photo-back,
+    .slide-11__photo-front {
+      width: 70%;
+      height: 45%;
+    }
   }
 
   .slide-11__right {
     width: 100%;
-    padding: 8px 40px 24px;
+    padding: 1rem 2rem;
     flex: 1;
     align-items: flex-start;
   }
@@ -1768,12 +1701,12 @@
   }
 
   .slide-11__title {
-    font-size: 28px;
-    margin-bottom: 16px;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .slide-11__desc {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
   }
 }
 
@@ -1886,23 +1819,83 @@
 }
 
 /* ---- スライド12 レスポンシブ ---- */
+@media (max-width: 1024px) {
+  .slide-12__layout {
+    padding: 1.5rem 2rem;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
+
+  .slide-12__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .slide-12__desc {
+    font-size: 0.85rem;
+  }
+
+  .slide-12__icon {
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+
+  .slide-12__name {
+    font-size: 0.85rem;
+  }
+
+  .slide-12__card-desc {
+    font-size: 0.7rem;
+  }
+
+  .slide-12__card {
+    padding: 1.5rem 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .slide-12__layout {
-    padding: 32px 24px;
-    gap: 32px;
+    padding: 1rem 2rem;
+    gap: 0.75rem;
   }
 
   .slide-12__cards {
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
+  }
+
+  .slide-12__layout {
+    justify-content: flex-start;
   }
 
   .slide-12__card {
-    padding: 24px 20px;
+    padding: 1rem 1.5rem;
+    gap: 8px;
+    max-width: fit-content;
+    margin: 0 auto;
   }
 
-  .slide-12__title {
-    font-size: 28px;
+  .slide-12__icon {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .slide-12__icon::after {
+    display: none;
+  }
+
+  .slide-12__name {
+    font-size: 0.8rem;
+    margin-top: 0;
+  }
+
+  .slide-12__card-desc {
+    font-size: 0.7rem;
   }
 }
 
@@ -1992,35 +1985,58 @@
 }
 
 /* ---- スライド13 レスポンシブ ---- */
-@media (max-width: 768px) {
-  .slide-13__left {
-    position: relative;
-    left: auto;
-    top: auto;
-    bottom: auto;
-    width: 100%;
-    height: 40%;
-  }
-
-  .slide-13__layout {
-    flex-direction: column;
-  }
-
-  .slide-13__right {
-    position: relative;
-    left: auto;
-    right: auto;
-    height: auto;
-    flex: 1;
-    padding: 32px 24px;
-  }
-
+@media (max-width: 1024px) {
   .slide-13__deco {
     display: none;
   }
 
+  .slide-13__right {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-13__layout {
+    flex-direction: column;
+  }
+
+  .slide-13__left {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 45%;
+    aspect-ratio: auto;
+    order: 1;
+  }
+
+  .slide-13__right {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto;
+    flex: 1;
+    padding: 1.5rem 2rem;
+    order: 2;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .slide-13__right-inner {
+    max-width: 100%;
+  }
+
   .slide-13__title {
-    font-size: 36px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-13__desc {
+    font-size: 0.9rem;
   }
 }
 
@@ -2092,25 +2108,28 @@
 }
 
 /* ---- スライド14 レスポンシブ ---- */
-@media (max-width: 768px) {
-  .slide-14__photo-top {
-    width: 100%;
-    height: 30%;
+@media (max-width: 1024px) {
+  .slide-14__inner {
+    flex-direction: column;
   }
 
   .slide-14__text-block {
     width: 100%;
-    top: 30%;
-    height: 35%;
-    padding: 24px;
+    height: auto;
+    padding: 2rem;
   }
 
   .slide-14__photo-right {
-    display: none;
+    width: 100%;
+    flex: 1;
   }
 
   .slide-14__title {
-    font-size: 32px;
+    font-size: 1.75rem;
+  }
+
+  .slide-14__desc {
+    font-size: 0.85rem;
   }
 }
 
@@ -2254,34 +2273,73 @@
 }
 
 /* ---- スライド16 レスポンシブ ---- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .slide-16__hero {
     height: 40%;
-    margin: 16px 16px 0;
-    width: calc(100% - 32px);
   }
 
   .slide-16__icons {
-    gap: 16px;
-    padding: 0 24px;
-    margin-top: -28px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 32px;
+    margin-top: -36px;
+  }
+
+  .slide-16__item {
+    width: calc(50% - 20px);
+    max-width: none;
   }
 
   .slide-16__hex-wrap {
-    width: 56px;
+    width: 100px;
+    height: 120px;
+  }
+
+  .slide-16__name {
+    font-size: 16px;
+  }
+
+  .slide-16__item-desc {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-16__hero {
+    height: 30%;
+  }
+
+  .slide-16__icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 0 2rem;
+  }
+
+  .slide-16__item {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .slide-16__hex-wrap {
+    width: 48px;
     height: 56px;
   }
 
   .slide-16__hex {
-    padding: 14px;
+    padding: 12px;
   }
 
   .slide-16__name {
-    font-size: 12px;
+    font-size: 1rem;
   }
 
   .slide-16__item-desc {
-    display: none;
+    font-size: 0.75rem;
+    display: block;
   }
 }
 
@@ -2457,6 +2515,44 @@
 }
 
 /* ---- スライド17 レスポンシブ ---- */
+@media (max-width: 1024px) {
+  .slide-17__left {
+    width: 40%;
+    padding: 40px;
+  }
+
+  .slide-17__right {
+    width: 60%;
+  }
+
+  .slide-17__diamond {
+    width: 40vh;
+    height: 40vh;
+  }
+
+  .slide-17__diamond-deco {
+    width: 20vh;
+    height: 20vh;
+    top: 10%;
+    right: 8%;
+    z-index: 1;
+  }
+
+  .slide-17__diamond-deco--bottom,
+  .slide-17__diamond-deco--under {
+    display: none;
+  }
+
+  .slide-17__title {
+    font-size: clamp(28px, 3.5vw, 42px);
+  }
+
+  .slide-17__desc {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .slide-17__layout {
     flex-direction: column;
@@ -2464,26 +2560,54 @@
 
   .slide-17__left {
     width: 100%;
-    padding: 32px 24px;
+    padding: 1.5rem 2rem;
+    order: 2;
+  }
+
+  .slide-17__left-inner {
+    max-width: 100%;
   }
 
   .slide-17__right {
     width: 100%;
-    height: 40%;
+    height: 45%;
+    order: 1;
   }
 
   .slide-17__diamond {
-    width: 30vh;
-    height: 30vh;
+    width: 28vh;
+    height: 28vh;
   }
 
   .slide-17__diamond-deco {
-    width: 36vh;
-    height: 36vh;
+    width: 14vh;
+    height: 14vh;
+    top: 10%;
+    right: 10%;
+    z-index: 1;
   }
 
   .slide-17__title {
-    font-size: 32px;
+    font-size: 1.5rem;
+  }
+
+  .slide-17__desc {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-17__item-icon {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+  }
+
+  .slide-17__item-name {
+    font-size: 1rem;
+  }
+
+  .slide-17__item-desc {
+    font-size: 0.75rem;
   }
 }
 
@@ -2618,18 +2742,69 @@
 }
 
 /* ---- スライド18 レスポンシブ ---- */
+@media (max-width: 1024px) {
+  .slide-18__layout {
+    padding: 32px;
+  }
+
+  .slide-18__left-wrap {
+    width: 45%;
+    height: 70%;
+  }
+
+  .slide-18__left-photo {
+    width: 85%;
+    height: 80%;
+  }
+
+  .slide-18__left-bg {
+    width: 45%;
+    height: 60%;
+  }
+}
+
 @media (max-width: 768px) {
   .slide-18__layout {
     flex-direction: column;
+    padding: 1.5rem;
   }
 
-  .slide-18__left {
+  .slide-18__left-wrap {
     width: 100%;
     height: 40%;
+    align-self: center;
+  }
+
+  .slide-18__left-photo {
+    width: 70%;
+    height: 90%;
+  }
+
+  .slide-18__left-bg {
+    width: 50% !important;
+    height: 50% !important;
+    right: -8% !important;
+    top: auto !important;
+    bottom: -8% !important;
+    transform: none !important;
   }
 
   .slide-18__right {
-    padding: 32px 24px;
+    padding: 1rem 1.5rem;
+  }
+
+  .slide-18__right-inner {
+    max-width: 100%;
+  }
+
+  .slide-18__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .slide-18__desc {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
   }
 
   .slide-18__charts {
@@ -2645,9 +2820,38 @@
     font-size: 16px;
     top: 24px;
   }
+}
 
-  .slide-18__title {
-    font-size: 32px;
+@media (max-width: 480px) {
+  .slide-18__charts {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .slide-18__chart {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .slide-18__donut {
+    width: 48px;
+    height: 48px;
+  }
+
+  .slide-18__chart-value {
+    font-size: 14px;
+    top: 14px;
+  }
+
+  .slide-18__chart-value {
+    top: 15px;
+    left: 13px;
+    transform: none;
+  }
+
+  .slide-18__chart-label {
+    text-align: left;
   }
 }
 

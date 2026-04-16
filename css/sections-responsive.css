@@ -684,3 +684,308 @@
     font-size: 0.75rem;
   }
 }
+
+/* ----------------------------------------
+   スライド7: Our Service
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-7__left {
+    width: 8%;
+  }
+
+  .slide-7__icon {
+    width: 64px;
+    height: 64px;
+    padding: 16px;
+  }
+
+  .slide-7__name {
+    font-size: 18px;
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .panel.slide-7 {
+    flex-direction: column;
+  }
+
+  .panel.slide-7 > .slide-7__left {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 1rem 0;
+  }
+
+  .slide-7__part {
+    writing-mode: horizontal-tb;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .slide-7__main {
+    position: static !important;
+    width: 100% !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide-7__photo {
+    height: 40%;
+    margin: 0;
+    width: 100%;
+  }
+
+  .slide-7__services {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 2rem;
+  }
+
+  .slide-7__service {
+    flex: none;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .slide-7__icon {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    flex-shrink: 0;
+  }
+
+  .slide-7__name {
+    font-size: 1.1rem;
+  }
+
+  .slide-7__desc {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- 小型SP（480px）: 768pxのまま適用 --- */
+
+/* ----------------------------------------
+   スライド9: Part Two + Our Works（スライド15も同様）
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-9__left {
+    width: 8%;
+  }
+
+  .slide-9__right {
+    width: 32%;
+  }
+
+  .slide-9__title {
+    font-size: clamp(32px, 4vw, 48px);
+  }
+
+  .slide-9__desc {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .slide-9__layout {
+    flex-direction: column;
+  }
+
+  .slide-9__left {
+    width: 100% !important;
+    height: 8%;
+    order: 1;
+  }
+
+  .slide-9__part {
+    writing-mode: horizontal-tb;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .slide-9__center {
+    padding: 3rem 2rem 2rem;
+    order: 2;
+    flex: none;
+  }
+
+  .slide-9__center-inner {
+    max-width: 100%;
+  }
+
+  .slide-9__heading {
+    margin-bottom: 1rem;
+  }
+
+  .slide-9__icon {
+    font-size: 1.5rem;
+  }
+
+  .slide-9__title {
+    font-size: 1.75rem;
+  }
+
+  .slide-9__desc {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .slide-9__btn-text {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .slide-9__btn-arrow {
+    width: 2.2rem;
+    height: 2.1rem;
+    font-size: 0.85rem;
+  }
+
+  .slide-9__right {
+    width: 100% !important;
+    height: 50%;
+    flex: none;
+    order: 3;
+  }
+}
+
+/* --- 小型SP（480px） --- */
+@media (max-width: 480px) {
+  .slide-9__desc {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-9__title {
+    font-size: 1.5rem;
+  }
+
+  .slide-9__right {
+    height: 50%;
+  }
+
+  .slide-9__center {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+}
+
+/* ----------------------------------------
+   スライド15: Part Three + Data Analysis
+   ---------------------------------------- */
+
+/* --- タブレット（1024px） --- */
+@media (max-width: 1024px) {
+  .slide-15__left {
+    width: 8%;
+  }
+
+  .slide-15__right {
+    width: 32%;
+  }
+
+  .slide-15__title {
+    font-size: clamp(32px, 4vw, 48px);
+  }
+
+  .slide-15__desc {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+}
+
+/* --- SP（768px） --- */
+@media (max-width: 768px) {
+  .slide-15__layout {
+    flex-direction: column;
+  }
+
+  .slide-15__left {
+    width: 100% !important;
+    height: 8%;
+    order: 1;
+  }
+
+  .slide-15__part {
+    writing-mode: horizontal-tb;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
+
+  .slide-15__center {
+    padding: 3rem 2rem 2rem;
+    order: 2;
+    flex: none;
+  }
+
+  .slide-15__center-inner {
+    max-width: 100%;
+  }
+
+  .slide-15__heading {
+    margin-bottom: 1rem;
+  }
+
+  .slide-15__icon {
+    font-size: 1.5rem;
+  }
+
+  .slide-15__title {
+    font-size: 1.75rem;
+  }
+
+  .slide-15__desc {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .slide-15__btn-text {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .slide-15__btn-arrow {
+    width: 2.2rem;
+    height: 2.1rem;
+    font-size: 0.85rem;
+  }
+
+  .slide-15__right {
+    width: 100% !important;
+    height: 50%;
+    flex: none;
+    order: 3;
+  }
+}
+
+/* --- 小型SP（480px） --- */
+@media (max-width: 480px) {
+  .slide-15__desc {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-15__title {
+    font-size: 1.5rem;
+  }
+
+  .slide-15__right {
+    height: 50%;
+  }
+
+  .slide-15__center {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+}

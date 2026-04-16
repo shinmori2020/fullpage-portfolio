@@ -43,7 +43,7 @@
       case 11: slide12Anim(p); break;
       case 12: slide13Anim(p); break;
       case 13: slide14Anim(p); break;
-      case 14: slide9Anim(p); break;
+      case 14: slide15Anim(p); break;
       case 15: slide16Anim(p); break;
       case 16: slide17Anim(p); break;
       case 17: slide18Anim(p); break;
@@ -536,6 +536,40 @@
   }
 
   /* ---------- スライド9: PART TWO + Our Works ---------- */
+  function slide15Anim(p) {
+    var tl = gsap.timeline();
+    var part  = p.querySelector(".slide-15__part");
+    var icon  = p.querySelector(".slide-15__icon");
+    var title = p.querySelector(".slide-15__title");
+    var desc  = p.querySelector(".slide-15__desc");
+    var btn   = p.querySelector(".slide-15__btn");
+    var photo = p.querySelector(".slide-15__right");
+
+    if (part) {
+      gsap.set(part, { y: 30 });
+      tl.to(part, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" });
+    }
+    if (icon) {
+      tl.to(icon, { opacity: 1, duration: 0.4, ease: "power3.out" }, "-=0.4");
+    }
+    if (title) {
+      gsap.set(title, { y: 30 });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.3");
+    }
+    if (desc) {
+      gsap.set(desc, { y: 20 });
+      tl.to(desc, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4");
+    }
+    if (btn) {
+      gsap.set(btn, { y: 15 });
+      tl.to(btn, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, "-=0.3");
+    }
+    if (photo) {
+      gsap.set(photo, { x: 60 });
+      tl.to(photo, { opacity: 1, x: 0, duration: 0.85, ease: "power3.out" }, "-=0.6");
+    }
+  }
+
   function slide9Anim(p) {
     var tl = gsap.timeline();
     var part  = p.querySelector(".slide-9__part");
