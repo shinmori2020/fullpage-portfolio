@@ -118,7 +118,8 @@
    スライド1: Cover / Hero
    ---------------------------------------- */
 @media (max-width: 768px) {
-  .slide-1 .placeholder-image {
+  .slide-1 .placeholder-image,
+  .slide-27 .placeholder-image {
     position: absolute;
     top: 50%;
     left: 50%;
